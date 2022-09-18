@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "520352551145",
+    "project_id": "gamerguide-6c940",
+    "storage_bucket": "gamerguide-6c940.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520352551145:android:26875b503f3de2b33c6078",
+        "android_client_info": {
+          "package_name": "com.montfel.gamerguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520352551145-o2tgd83b95u74msnjk2brj0mogpdp0h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.montfel.gamerguide",
+            "certificate_hash": "e2ca7be2758a19c3535e82c394ef143a20237174"
+          }
+        },
+        {
+          "client_id": "520352551145-1cl11uct1co5u6f5hkon8jf62ip4ao0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTueSfHci8hMxKmi5eyE2twIQaJcku2t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520352551145-1cl11uct1co5u6f5hkon8jf62ip4ao0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
