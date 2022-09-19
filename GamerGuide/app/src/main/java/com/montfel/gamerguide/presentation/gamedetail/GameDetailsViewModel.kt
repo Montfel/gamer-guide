@@ -27,8 +27,7 @@ class GameDetailViewModel @Inject constructor(
 
     fun getGameDetails(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val gameDetail =
-                repository.getGameDetails(gameId = id, apiKey = "c95ba6ed614b46888777507b9e7e4eec")
+            val gameDetail = repository.getGameDetails(gameId = id)
             if (gameDetail is Response.Success) {
                 _uiState.update {
                     it.copy(

@@ -9,6 +9,6 @@ interface DataSource {
     @GET("games/{gameId}")
     suspend fun getGameDetails(
         @Path(value = "gameId") gameId: Int,
-        @Query("key") apiKey: String
+        @Query("key") apiKey: String = Constants.API_KEY
     ): GameDetailsDto
 }

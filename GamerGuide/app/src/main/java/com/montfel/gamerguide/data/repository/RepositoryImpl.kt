@@ -12,7 +12,7 @@ import javax.inject.Singleton
 class RepositoryImpl @Inject constructor(
     private val dataSource: DataSource,
 ) : Repository {
-    override suspend fun getGameDetails(gameId: Int, apiKey: String): Response<GameDetails> {
-        return requestWrapper { dataSource.getGameDetails(gameId, apiKey).toDomain() }
+    override suspend fun getGameDetails(gameId: Int): Response<GameDetails> {
+        return requestWrapper { dataSource.getGameDetails(gameId).toDomain() }
     }
 }

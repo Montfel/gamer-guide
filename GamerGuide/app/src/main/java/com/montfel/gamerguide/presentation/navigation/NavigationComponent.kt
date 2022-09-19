@@ -24,7 +24,7 @@ fun NavigationComponent() {
             Home(navController = navController)
         }
         composable(
-            route = Screen.GameDetail.route,
+            route = Screen.GameDetails.route,
             arguments = listOf(
                 navArgument("id") {
                     type = NavType.IntType
