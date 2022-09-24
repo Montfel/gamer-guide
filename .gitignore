@@ -105,3 +105,5 @@ lint/tmp/
 .idea/compiler.xml
 .idea/workspace.xml~
 .idea/other.xml
+GamerGuide/.idea/workspace.xml
+GamerGuide/.idea/modules.xml
