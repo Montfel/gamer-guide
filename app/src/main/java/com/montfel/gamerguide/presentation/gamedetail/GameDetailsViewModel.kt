@@ -2,9 +2,9 @@ package com.montfel.gamerguide.presentation.gamedetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.gamerguide.domain.model.GameDetails
-import com.montfel.gamerguide.domain.repository.Repository
-import com.montfel.gamerguide.helper.Response
+import com.montfel.common.Response
+import com.montfel.domain.model.GameDetails
+import com.montfel.domain.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
