@@ -1,0 +1,15 @@
+object Versions {
+    const val accompanist = "0.26.4-beta"
+    const val activity = "1.6.0"
+    const val coil = "2.2.1"
+    const val compose = "1.3.0-beta03"
+    const val compose_compiler = "1.3.1"
+    const val core = "1.9.0"
+    const val firebase = "30.5.0"
+    const val junit = "4.13.2"
+    const val lifecycle = "2.6.0-alpha02"
+    const val material3 = "1.0.0-beta03"
+    const val navigation = "2.5.2"
+    const val okhttp = "4.10.0"
+    const val retrofit = "2.9.0"
+}
