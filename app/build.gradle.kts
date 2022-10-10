@@ -44,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose_compiler
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
     packagingOptions {
         resources {
@@ -89,11 +89,11 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
     // Dagger
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:${Versions.dagger}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.dagger}")
 
     // Hilt
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:${Versions.hilt}")
 
     // Core
     implementation("androidx.core:core-ktx:${Versions.core}")

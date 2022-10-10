@@ -42,8 +42,8 @@ dependencies {
     implementation(project(":domain"))
 
     // Dagger
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:${Versions.dagger}")
+    kapt("com.google.dagger:hilt-android-compiler:${Versions.dagger}")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
@@ -51,7 +51,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
 
     // Hilt
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:${Versions.hilt}")
 
     // Core
     implementation("androidx.core:core-ktx:${Versions.core}")
