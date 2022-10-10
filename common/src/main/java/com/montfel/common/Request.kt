@@ -1,6 +1,5 @@
 package com.montfel.common
 
-import kotlinx.coroutines.CancellationException
 import retrofit2.HttpException
 import java.net.SocketException
 import java.net.SocketTimeoutException
@@ -44,7 +43,6 @@ suspend fun <T : Any> requestWrapper(call: suspend () -> T): Response<T> {
             }
             is SocketException -> Response.ServerError.NetworkError(exception.message ?: "")
             is UnknownHostException, is SocketTimeoutException -> Response.OfflineError
-            is CancellationException -> Response.RequestCancelled
             else -> {
                 Response.ServerError.UnknownError(errorMsg = exception.message ?: "")
             }

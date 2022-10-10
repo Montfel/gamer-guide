@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.montfel.domain"
-    compileSdk = rootProject.extra["compile_sdk"] as Int
+    compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        minSdk = rootProject.extra["min_sdk"] as Int
-        targetSdk = rootProject.extra["target_sdk"] as Int
+        minSdk = ConfigData.minSdkVersion
+        targetSdk = ConfigData.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,18 +35,14 @@ android {
 
 dependencies {
 
-    val core: String by rootProject.extra
-    val activity: String by rootProject.extra
-    val junit: String by rootProject.extra
-
     // Modules
     implementation(project(":common"))
 
     // Core
-    implementation("androidx.core:core-ktx:$core")
+    implementation("androidx.core:core-ktx:${Versions.core}")
 
     // Test
-    testImplementation("junit:junit:$junit")
+    testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }

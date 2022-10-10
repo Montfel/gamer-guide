@@ -9,14 +9,14 @@ plugins {
 
 android {
     namespace = "com.montfel.gamerguide"
-    compileSdk = rootProject.extra["compile_sdk"] as Int
+    compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
         applicationId = "com.montfel.gamerguide"
-        minSdk = rootProject.extra["min_sdk"] as Int
-        targetSdk = rootProject.extra["target_sdk"] as Int
-        versionCode = 1
-        versionName = "1.0.0"
+        minSdk = ConfigData.minSdkVersion
+        targetSdk = ConfigData.targetSdkVersion
+        versionCode = ConfigData.versionCode
+        versionName = ConfigData.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -44,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = rootProject.extra["compose_compiler"] as String
+        kotlinCompilerExtensionVersion = Versions.compose_compiler
     }
     packagingOptions {
         resources {
@@ -55,47 +55,36 @@ android {
 
 dependencies {
 
-    val compose: String by rootProject.extra
-    val material3: String by rootProject.extra
-    val coil: String by rootProject.extra
-    val accompanist: String by rootProject.extra
-    val lifecycle: String by rootProject.extra
-    val firebase: String by rootProject.extra
-    val core: String by rootProject.extra
-    val activity: String by rootProject.extra
-    val navigation: String by rootProject.extra
-    val junit: String by rootProject.extra
-
     // Modules
     implementation(project(":domain"))
     implementation(project(":common"))
     implementation(project(":core"))
 
     // Compose
-    implementation("androidx.compose.animation:animation:$compose")
-    implementation("androidx.compose.foundation:foundation:$compose")
-    implementation("androidx.compose.runtime:runtime:$compose")
-    implementation("androidx.compose.ui:ui:$compose")
-    implementation("androidx.compose.ui:ui-tooling-preview:$compose")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose")
-    debugImplementation("androidx.compose.ui:ui-tooling:$compose")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$compose")
+    implementation("androidx.compose.animation:animation:${Versions.compose}")
+    implementation("androidx.compose.foundation:foundation:${Versions.compose}")
+    implementation("androidx.compose.runtime:runtime:${Versions.compose}")
+    implementation("androidx.compose.ui:ui:${Versions.compose}")
+    implementation("androidx.compose.ui:ui-tooling-preview:${Versions.compose}")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:${Versions.compose}")
+    debugImplementation("androidx.compose.ui:ui-tooling:${Versions.compose}")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:${Versions.compose}")
 
     // Material 3
-    implementation("androidx.compose.material3:material3:$material3")
+    implementation("androidx.compose.material3:material3:${Versions.material3}")
 
     // Coil
-    implementation("io.coil-kt:coil-compose:$coil")
+    implementation("io.coil-kt:coil-compose:${Versions.coil}")
 
     // Accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanist")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}")
 
     // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:${Versions.lifecycle}")
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:$firebase"))
+    implementation(platform("com.google.firebase:firebase-bom:${Versions.firebase}"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
@@ -107,16 +96,16 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // Core
-    implementation("androidx.core:core-ktx:$core")
+    implementation("androidx.core:core-ktx:${Versions.core}")
 
     // Activity
-    implementation("androidx.activity:activity-compose:$activity")
+    implementation("androidx.activity:activity-compose:${Versions.activity}")
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:$navigation")
+    implementation("androidx.navigation:navigation-compose:${Versions.navigation}")
 
     // Test
-    testImplementation("junit:junit:$junit")
+    testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }
