@@ -53,9 +53,6 @@ dependencies {
     // Core
     implementation "androidx.core:core-ktx:$core"
 
-    // Activity
-    implementation "androidx.appcompat:appcompat:$activity"
-
     // Test
     testImplementation "junit:junit:$junit"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
