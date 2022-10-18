@@ -1,19 +1,16 @@
 package com.montfel.di
 
 import com.montfel.data.datasource.DataSource
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import org.koin.dsl.module
 import retrofit2.Retrofit
-import javax.inject.Singleton
+import retrofit2.converter.gson.GsonConverterFactory
 
-@Module
-@InstallIn(SingletonComponent::class)
-internal object DataSourcesModule {
-
-    @Singleton
-    @Provides
-    fun providesProfileDataSource(retrofit: Retrofit): DataSource =
-        retrofit.create(DataSource::class.java)
+val dataSource = module {
+    single {
+        Retrofit.Builder()
+            .baseUrl("https://rawg.io/api/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(DataSource::class.java)
+    }
 }

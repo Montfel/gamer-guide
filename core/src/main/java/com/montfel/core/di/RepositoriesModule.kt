@@ -1,20 +1,13 @@
 package com.montfel.core.di
 
 import com.montfel.data.repository.RepositoryImpl
+import com.montfel.di.dataSource
 import com.montfel.domain.repository.Repository
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import org.koin.dsl.module
 
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class RepositoriesModule {
-
-    @Singleton
-    @Binds
-    internal abstract fun bindsRepository(
-        repositoryImpl: RepositoryImpl
-    ): Repository
+val repositories = module {
+    single<Repository> {
+        RepositoryImpl(get())
+    }
+    includes(dataSource)
 }
