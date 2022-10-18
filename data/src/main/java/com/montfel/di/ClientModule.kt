@@ -8,7 +8,8 @@ private const val BASE_URL = "https://rawg.io/api/"
 
 val client = module {
     single {
-        Retrofit.Builder()
+        Retrofit
+            .Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
