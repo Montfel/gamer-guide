@@ -23,7 +23,7 @@ fun GameDetail(
     LaunchedEffect(key1 = Unit) {
         viewModel.getGameDetails(id)
     }
-    Column() {
+    Column {
         AsyncImage(
             model = uiState.gameDetails?.backgroundImage,
             contentDescription = null,

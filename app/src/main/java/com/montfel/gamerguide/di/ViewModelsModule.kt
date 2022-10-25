@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.presentation
+package com.montfel.gamerguide.di
 
 import com.montfel.gamerguide.presentation.gamedetail.GameDetailViewModel
 import com.montfel.gamerguide.presentation.home.HomeViewModel
