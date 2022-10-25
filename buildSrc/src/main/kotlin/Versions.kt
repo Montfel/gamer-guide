@@ -8,7 +8,7 @@ object Versions {
     const val dagger = "2.44"
     const val firebase = "30.5.0"
     const val firebaseCrashlytics = "2.9.2"
-    const val gradle = "8.0.0-alpha04"
+    const val gradle = "8.0.0-alpha06"
     const val googleServices = "4.3.14"
     const val junit = "4.13.2"
     const val koin = "3.2.2"
