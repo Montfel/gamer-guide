@@ -60,17 +60,12 @@ dependencies {
     implementation(project(":core"))
 
     // Compose
-    implementation("androidx.compose.animation:animation:${Versions.compose}")
-    implementation("androidx.compose.foundation:foundation:${Versions.compose}")
-    implementation("androidx.compose.runtime:runtime:${Versions.compose}")
-    implementation("androidx.compose.ui:ui:${Versions.compose}")
-    implementation("androidx.compose.ui:ui-tooling-preview:${Versions.compose}")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:${Versions.compose}")
-    debugImplementation("androidx.compose.ui:ui-tooling:${Versions.compose}")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:${Versions.compose}")
-
-    // Material 3
-    implementation("androidx.compose.material3:material3:${Versions.material3}")
+    implementation(platform("androidx.compose:compose-bom:${Versions.compose}"))
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+//    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Coil
     implementation("io.coil-kt:coil-compose:${Versions.coil}")
