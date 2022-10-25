@@ -56,17 +56,22 @@ The following tools were used in the construction of the project:
 
 -   **Clean Architecture**
 -   **MVI**
+-   **Modular**
 
 #### Libraries
 
--   **[Apollo](https://www.apollographql.com/)**
 -   **[Jetpack Compose](https://developer.android.com/jetpack/compose)**
+-   **[Material3](https://m3.material.io/)**
 -   **[Coil](https://coil-kt.github.io/coil/)**
 -   **[Accompanist](https://google.github.io/accompanist/)**
 -   **[Firebase](https://firebase.google.com/)**
+-   **[Koin](https://insert-koin.io/)**
+-   **[Ktor](https://ktor.io/)**
+
 
 #### Util
 
+-   Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)**
 -   IDE:  **[Android Studio](https://developer.android.com/studio)**
 -   Icons:  **[Flaticons](https://www.flaticon.com/)**
 
