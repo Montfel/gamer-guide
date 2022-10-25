@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -41,17 +40,13 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":domain"))
 
-    // Dagger
-    implementation("com.google.dagger:hilt-android:${Versions.dagger}")
-    kapt("com.google.dagger:hilt-android-compiler:${Versions.dagger}")
-
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
     implementation("com.google.code.gson:gson:${Versions.retrofit}")
     implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
 
-    // Hilt
-    implementation("androidx.hilt:hilt-navigation-compose:${Versions.hilt}")
+    // Koin
+    implementation("io.insert-koin:koin-android:${Versions.koin}")
 
     // Core
     implementation("androidx.core:core-ktx:${Versions.core}")

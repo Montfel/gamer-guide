@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
@@ -88,12 +87,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
-    // Dagger
-    implementation("com.google.dagger:hilt-android:${Versions.dagger}")
-    kapt("com.google.dagger:hilt-android-compiler:${Versions.dagger}")
-
-    // Hilt
-    implementation("androidx.hilt:hilt-navigation-compose:${Versions.hilt}")
+    // Koin
+    implementation("io.insert-koin:koin-android:${Versions.koin}")
+    implementation("io.insert-koin:koin-androidx-navigation:${Versions.koin}")
+    implementation("io.insert-koin:koin-androidx-compose:${Versions.koinCompose}")
 
     // Core
     implementation("androidx.core:core-ktx:${Versions.core}")

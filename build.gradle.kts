@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}")
         classpath("com.google.gms:google-services:${Versions.googleServices}")
         classpath("com.google.firebase:firebase-crashlytics-gradle:${Versions.firebaseCrashlytics}")
     }
