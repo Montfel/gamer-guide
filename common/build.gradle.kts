@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -35,16 +36,9 @@ android {
 
 dependencies {
 
-    // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
-    implementation("com.google.code.gson:gson:${Versions.retrofit}")
-    implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
+    implementation(libs.core)
 
-    // Core
-    implementation("androidx.core:core-ktx:${Versions.core}")
-
-    // Test
-    testImplementation("junit:junit:${Versions.junit}")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    testImplementation(libs.junit.test)
+    androidTestImplementation(libs.junit.test.android)
+    androidTestImplementation(libs.espresso)
 }
