@@ -22,8 +22,10 @@ retrofit = "2.9.0"
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
 android-library = { id = "com.android.library", version.ref = "gradle" }
+firebase-crashlytics-gradle = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-gradle" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-#kotlin-kapt = { id = "kotlin-kapt" }
+kotlin-kapt = { id = "kotlin-kapt", version.ref = "kotlin" }
 
 [libraries]
 accompanist = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }

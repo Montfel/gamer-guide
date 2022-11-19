@@ -1,8 +1,8 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")// TODO
-    id("org.jetbrains.kotlin.android")// TODO
-    id("kotlin-kapt")// TODO
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id(libs.plugins.kotlin.kapt.get().pluginId)
 }
 
 android {
