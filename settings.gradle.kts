@@ -13,8 +13,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GamerGuide"
-include (":app")
-include (":data")
-include (":domain")
-include (":common")
-include (":core")
+include(":app")
+include(":data")
+include(":domain")
+include(":common")
+include(":core")
