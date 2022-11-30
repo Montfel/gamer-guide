@@ -67,11 +67,13 @@ The following tools were used in the construction of the project:
 -   **[Firebase](https://firebase.google.com/)**
 -   **[Koin](https://insert-koin.io/)**
 -   **[Ktor](https://ktor.io/)**
+-   **[Compose Destinations](https://github.com/raamcosta/compose-destinations)**
+
 
 
 #### Util
 
--   Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)**
+-   Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)** with **[Version Catalog](https://docs.gradle.org/current/userguide/platforms.html)**
 -   IDE:  **[Android Studio](https://developer.android.com/studio)**
 -   Icons:  **[Flaticons](https://www.flaticon.com/)**
 
