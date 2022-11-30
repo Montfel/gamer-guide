@@ -13,7 +13,7 @@ import coil.compose.AsyncImage
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun GameDetail(
+fun GameDetails(
     id: Int,
     navController: NavController,
     viewModel: GameDetailViewModel = getViewModel()
