@@ -14,7 +14,7 @@ data class GameDetailUiState(
     val gameDetails: GameDetails? = null
 )
 
-class GameDetailViewModel(
+class GameDetailsViewModel(
     private val repository: Repository
 ) : ViewModel() {
 
