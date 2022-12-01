@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.presentation.gamedetail
+package com.montfel.gamerguide.presentation.gamedetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
