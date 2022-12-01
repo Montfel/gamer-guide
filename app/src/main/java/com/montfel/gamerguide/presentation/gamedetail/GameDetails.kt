@@ -8,15 +8,15 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.ramcosta.composedestinations.annotation.Destination
 import org.koin.androidx.compose.getViewModel
 
+@Destination
 @Composable
 fun GameDetails(
     id: Int,
-    navController: NavController,
-    viewModel: GameDetailViewModel = getViewModel()
+    viewModel: GameDetailsViewModel = getViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 

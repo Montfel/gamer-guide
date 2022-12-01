@@ -3,17 +3,16 @@ package com.montfel.gamerguide.presentation.home
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
-import com.montfel.gamerguide.presentation.navigation.Screen
-import org.koin.androidx.compose.getViewModel
+import com.montfel.gamerguide.presentation.destinations.GameDetailsDestination
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
+@RootNavGraph(start = true)
+@Destination
 @Composable
-fun Home(
-    navController: NavController,
-    viewModel: HomeViewModel = getViewModel()
-) {
-//    val uiState by viewModel.uiState.collectAsState()
-    Button(onClick = { navController.navigate(Screen.GameDetails.createRoute(2)) }) {
+fun Home(navigator: DestinationsNavigator) {
+    Button(onClick = { navigator.navigate(GameDetailsDestination(id = 2)) }) {
         Text(text = "Go to game detail")
     }
 }
