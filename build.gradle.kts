@@ -11,9 +11,9 @@ buildscript {
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id(libs.plugins.android.application.get().pluginId) version (libs.versions.gradle.get()) apply false
-    id(libs.plugins.android.library.get().pluginId) version (libs.versions.gradle.get()) apply false
-    id(libs.plugins.kotlin.android.get().pluginId) version (libs.versions.kotlin.get()) apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 tasks.register("clean", Delete::class) {
