@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface DataSource {
+interface GameService {
     @GET("games/{gameId}")
     suspend fun getGameDetails(
         @Path(value = "gameId") gameId: Int,

@@ -65,7 +65,7 @@ The following tools were used in the construction of the project:
 -   **[Coil](https://coil-kt.github.io/coil/)**
 -   **[Accompanist](https://google.github.io/accompanist/)**
 -   **[Firebase](https://firebase.google.com/)**
--   **[Koin](https://insert-koin.io/)**
+-   **[Hilt](https://dagger.dev/hilt/)**
 -   **[Ktor](https://ktor.io/)**
 -   **[Compose Destinations](https://github.com/raamcosta/compose-destinations)**
 

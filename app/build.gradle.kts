@@ -6,6 +6,7 @@ plugins {
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.ksp)
+    id(libs.plugins.hilt.get().pluginId)
 }
 
 kotlin {
@@ -71,6 +72,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":common"))
     implementation(project(":core"))
+    implementation(project(":data"))
 
     implementation(libs.accompanist)
     implementation(libs.activity)
@@ -82,7 +84,9 @@ dependencies {
     ksp(libs.destinations.ksp)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
-    implementation(libs.bundles.koin)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation)
     implementation(libs.bundles.lifecycle)
     implementation(libs.navigation)
 

@@ -10,7 +10,9 @@ import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 import com.montfel.gamerguide.presentation.navigation.NavigationComponent
 import com.montfel.gamerguide.presentation.theme.GamerGuideTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GamerGuideActivity : ComponentActivity() {
 
     private lateinit var firebaseAnalytics: FirebaseAnalytics
