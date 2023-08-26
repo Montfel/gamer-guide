@@ -1,24 +1,25 @@
 [versions]
-accompanist = "0.29.0-alpha"
-activity = "1.7.0"
-android-gradle-plugin = "7.4.2"
-coil = "2.2.2"
-compose = "2023.03.00"
-compose-compiler = "1.4.2"
-core = "1.10.0"
-destinations = "1.7.33-beta"
+accompanist = "0.30.1"
+activity = "1.7.2"
+android-gradle-plugin = "8.1.1"
+coil = "2.4.0"
+compose = "2023.06.01"
+compose-compiler = "1.4.8"
+core = "1.10.1"
+destinations = "1.8.42-beta"
 espresso = "3.5.1"
-firebase = "31.2.0"
-firebase-crashlytics-gradle = "2.9.5"
-hilt = "2.45"
-hilt-navigation = "1.0.0"
+firebase = "32.2.3"
+firebase-crashlytics-gradle = "2.9.9"
 google-services = "4.3.15"
+gson = "2.10.1"
+hilt = "2.46" #2.47
+hilt-navigation = "1.0.0"
 junit = "4.13.2"
 junit-android = "1.1.5"
-kotlin = "1.8.10"
-ksp = "1.8.10-1.0.9"
-lifecycle = "2.6.0"
-navigation = "2.5.3"
+kotlin = "1.8.22"
+ksp = "1.8.22-1.0.11"
+lifecycle = "2.6.1"
+navigation = "2.6.0"
 retrofit = "2.9.0"
 
 [plugins]
@@ -51,7 +52,8 @@ firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebase-crashlytics-gradle" }
 google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
-hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation" }
 hilt-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
@@ -62,11 +64,10 @@ lifecycle-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.r
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit-gson = { module = "com.google.code.gson:gson", version.ref = "retrofit" }
 retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 [bundles]
 compose = ["compose-material3", "compose-ui-tooling", "compose-ui-tooling-preview", "compose-ui-test-manifest"]
 firebase = ["firebase-analytics", "firebase-crashlytics"]
 lifecycle = ["lifecycle-ktx", "lifecycle-compose"]
-retrofit = ["retrofit", "retrofit-gson", "retrofit-gson-converter"]
+retrofit = ["retrofit", "gson", "retrofit-gson-converter"]

@@ -18,7 +18,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -37,12 +37,11 @@ android {
 
 dependencies {
 
-    // Modules
-    implementation(project(":common"))
-    implementation(project(":domain"))
+    implementation(project(Modules.common))
+    implementation(project(Modules.domain))
 
     implementation(libs.core)
-    implementation(libs.hilt)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.bundles.retrofit)
 
