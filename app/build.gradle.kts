@@ -38,7 +38,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -59,7 +59,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -69,10 +69,10 @@ android {
 dependencies {
 
     // Modules
-    implementation(project(":domain"))
-    implementation(project(":common"))
-    implementation(project(":core"))
-    implementation(project(":data"))
+    implementation(project(Modules.common))
+    implementation(project(Modules.core))
+    implementation(project(Modules.data))
+    implementation(project(Modules.domain))
 
     implementation(libs.accompanist)
     implementation(libs.activity)
@@ -84,7 +84,7 @@ dependencies {
     ksp(libs.destinations.ksp)
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
-    implementation(libs.hilt)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation)
     implementation(libs.bundles.lifecycle)
