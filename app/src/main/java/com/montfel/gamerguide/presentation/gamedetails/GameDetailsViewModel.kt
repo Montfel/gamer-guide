@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.montfel.domain.model.GameDetails
 import com.montfel.domain.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,7 +16,8 @@ data class GameDetailUiState(
     val gameDetails: GameDetails? = null
 )
 
-class GameDetailsViewModel(
+@HiltViewModel
+class GameDetailsViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 

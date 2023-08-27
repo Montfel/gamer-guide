@@ -42,7 +42,8 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(libs.core)
-    implementation(libs.koin.android)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
     implementation(libs.bundles.retrofit)
 
     testImplementation(libs.junit.test)

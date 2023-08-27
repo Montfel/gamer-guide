@@ -7,6 +7,7 @@ buildscript {
         classpath(libs.google.services)
         classpath(libs.firebase.crashlytics.gradle)
         classpath(libs.kotlin.gradle)
+        classpath(libs.hilt.plugin)
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 @Suppress("DSL_SCOPE_VIOLATION")

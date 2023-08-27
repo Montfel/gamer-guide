@@ -1,13 +1,14 @@
 package com.montfel.data.repository
 
-import com.montfel.data.datasource.DataSource
+import com.montfel.data.datasource.GameService
 import com.montfel.domain.model.GameDetails
 import com.montfel.domain.repository.Repository
+import javax.inject.Inject
 
-class RepositoryImpl(
-    private val dataSource: DataSource
+class RepositoryImpl @Inject constructor(
+    private val service: GameService
 ) : Repository {
     override suspend fun getGameDetails(gameId: Int): Result<GameDetails> {
-        return runCatching { dataSource.getGameDetails(gameId).toDomain() }
+        return runCatching { service.getGameDetails(gameId).toDomain() }
     }
 }
