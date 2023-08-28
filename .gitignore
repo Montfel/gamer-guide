@@ -107,3 +107,5 @@ lint/tmp/
 .idea/other.xml
 GamerGuide/.idea/workspace.xml
 GamerGuide/.idea/modules.xml
+kotlinc.xml
+

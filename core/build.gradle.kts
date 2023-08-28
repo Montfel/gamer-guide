@@ -37,8 +37,8 @@ android {
 
 dependencies {
 
-    implementation(project(Modules.data))
-    implementation(project(Modules.domain))
+    implementation(projects.data)
+    implementation(projects.domain)
 
     implementation(libs.core)
     implementation(libs.hilt.android)

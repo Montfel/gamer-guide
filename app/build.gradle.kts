@@ -68,11 +68,8 @@ android {
 
 dependencies {
 
-    // Modules
-    implementation(project(Modules.common))
-    implementation(project(Modules.core))
-    implementation(project(Modules.data))
-    implementation(project(Modules.domain))
+    implementation(projects.core)
+    implementation(projects.domain)
 
     implementation(libs.accompanist)
     implementation(libs.activity)

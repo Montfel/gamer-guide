@@ -1,6 +1,7 @@
 package com.montfel.data.repository
 
 import com.montfel.data.datasource.GameService
+import com.montfel.data.mapper.toDomain
 import com.montfel.domain.model.GameDetails
 import com.montfel.domain.repository.Repository
 import javax.inject.Inject

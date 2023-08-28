@@ -1,4 +1,4 @@
-package com.montfel.di
+package com.montfel.data.di
 
 import com.montfel.data.datasource.GameService
 import dagger.Module

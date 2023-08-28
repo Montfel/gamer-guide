@@ -1,4 +1,4 @@
-package com.montfel.di
+package com.montfel.data.di
 
 import dagger.Module
 import dagger.Provides
