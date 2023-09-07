@@ -45,6 +45,8 @@ dependencies {
     implementation(libs.core)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.bundles.okhttp)
     implementation(libs.bundles.retrofit)
 
     testImplementation(libs.junit.test)
