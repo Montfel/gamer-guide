@@ -3,9 +3,7 @@ package com.montfel.gamerguide.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
-import com.google.firebase.ktx.Firebase
+import androidx.activity.viewModels
 import com.montfel.gamerguide.ui.navigation.NavigationComponent
 import com.montfel.gamerguide.ui.theme.GamerGuideTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,11 +11,13 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class GamerGuideActivity : ComponentActivity() {
 
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
+    private val viewModel: GamerGuideViewModel by viewModels() //fixme
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        firebaseAnalytics = Firebase.analytics
+
+        viewModel.initRemoteConfig() //fixme
+
         setContent {
             GamerGuideTheme {
                 NavigationComponent()

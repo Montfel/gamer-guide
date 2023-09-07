@@ -39,6 +39,9 @@ dependencies {
 
     implementation(projects.domain)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.bundles.firebase) //fixme
+
     implementation(libs.core)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
