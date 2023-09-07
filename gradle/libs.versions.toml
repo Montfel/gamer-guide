@@ -1,25 +1,25 @@
 [versions]
-accompanist = "0.30.1"
+accompanist = "0.32.0"
 activity = "1.7.2"
 android-gradle-plugin = "8.1.1"
 coil = "2.4.0"
-compose = "2023.06.01"
-compose-compiler = "1.4.8"
+compose = "2023.08.00"
+compose-compiler = "1.5.0"
 core = "1.10.1"
-destinations = "1.8.42-beta"
+destinations = "1.9.51"
 espresso = "3.5.1"
 firebase = "32.2.3"
 firebase-crashlytics-gradle = "2.9.9"
 google-services = "4.3.15"
 gson = "2.10.1"
-hilt = "2.46"
+hilt = "2.48"
 hilt-navigation = "1.0.0"
 junit = "4.13.2"
 junit-android = "1.1.5"
-kotlin = "1.8.22"
-ksp = "1.8.22-1.0.11"
+kotlin = "1.9.0"
+ksp = "1.9.0-1.0.13"
 lifecycle = "2.6.1"
-navigation = "2.6.0"
+navigation = "2.7.1"
 okhttp = "4.11.0"
 retrofit = "2.9.0"
 
@@ -32,7 +32,6 @@ hilt = { id = "com.google.dagger.hilt.android" }
 java-library = { id = "java-library" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-kapt = { id = "kotlin-kapt", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [libraries]

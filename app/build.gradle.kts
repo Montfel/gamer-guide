@@ -2,7 +2,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id(libs.plugins.kotlin.kapt.get().pluginId)
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.ksp)
@@ -83,7 +82,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation)
     implementation(libs.bundles.lifecycle)
     implementation(libs.navigation)
