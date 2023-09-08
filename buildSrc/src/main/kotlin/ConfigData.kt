@@ -1,6 +1,6 @@
 object ConfigData {
-    const val compileSdkVersion = 33
-    const val targetSdkVersion = 33
+    const val compileSdkVersion = 34
+    const val targetSdkVersion = 34
     const val minSdkVersion = 21
     const val majorVersion = 1
     const val minorVersion = 0

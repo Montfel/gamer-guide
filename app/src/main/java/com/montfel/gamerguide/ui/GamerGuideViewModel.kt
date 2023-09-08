@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class GamerGuideViewModel @Inject constructor(
     private val remoteConfigDataSource: RemoteConfigDataSource
 ) : ViewModel() {
-    fun initRemoteConfig() {
+    init {
         viewModelScope.launch {
             remoteConfigDataSource.init()
         }
