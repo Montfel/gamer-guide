@@ -1,7 +1,6 @@
 package com.montfel.data.dto
 
 import com.google.gson.annotations.SerializedName
-import com.montfel.domain.model.GameDetails
 
 data class GameDetailsDto(
     @SerializedName("name")
@@ -18,12 +17,4 @@ data class GameDetailsDto(
 
     @SerializedName("platforms")
     val platforms: List<PlatformsDto>
-) {
-    fun toDomain() = GameDetails(
-        name = name,
-        description = description,
-        released = released,
-        backgroundImage = backgroundImage,
-        platforms = platforms.map { it.toDomain() }
-    )
-}
+)

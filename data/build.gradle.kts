@@ -37,8 +37,7 @@ android {
 
 dependencies {
 
-    implementation(project(Modules.common))
-    implementation(project(Modules.domain))
+    implementation(projects.domain)
 
     implementation(libs.core)
     implementation(libs.hilt.android)

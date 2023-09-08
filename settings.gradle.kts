@@ -12,7 +12,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "GamerGuide"
+
 include(":app")
 include(":common")
 include(":core")

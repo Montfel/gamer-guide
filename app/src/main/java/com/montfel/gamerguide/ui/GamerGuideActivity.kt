@@ -1,15 +1,13 @@
-package com.montfel.gamerguide.presentation
+package com.montfel.gamerguide.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
-import com.montfel.gamerguide.presentation.navigation.NavigationComponent
-import com.montfel.gamerguide.presentation.theme.GamerGuideTheme
+import com.montfel.gamerguide.ui.navigation.NavigationComponent
+import com.montfel.gamerguide.ui.theme.GamerGuideTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,12 +23,5 @@ class GamerGuideActivity : ComponentActivity() {
                 NavigationComponent()
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    GamerGuideTheme {
     }
 }
