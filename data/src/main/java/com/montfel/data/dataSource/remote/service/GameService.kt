@@ -1,4 +1,4 @@
-package com.montfel.data.datasource
+package com.montfel.data.dataSource.remote.service
 
 import com.montfel.data.dto.GameDetailsDto
 import retrofit2.http.GET
@@ -9,6 +9,6 @@ interface GameService {
     @GET("games/{gameId}")
     suspend fun getGameDetails(
         @Path(value = "gameId") gameId: Int,
-        @Query("key") apiKey: String = Constants.API_KEY
+        @Query("key") apiKey: String
     ): GameDetailsDto
 }

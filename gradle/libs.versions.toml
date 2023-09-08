@@ -12,7 +12,7 @@ firebase = "32.2.3"
 firebase-crashlytics-gradle = "2.9.9"
 google-services = "4.3.15"
 gson = "2.10.1"
-hilt = "2.46" #2.47
+hilt = "2.46"
 hilt-navigation = "1.0.0"
 junit = "4.13.2"
 junit-android = "1.1.5"
@@ -50,6 +50,7 @@ espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "esp
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-config = { module = "com.google.firebase:firebase-config-ktx" }
 firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebase-crashlytics-gradle" }
 google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -68,6 +69,6 @@ retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", ve
 
 [bundles]
 compose = ["compose-material3", "compose-ui-tooling", "compose-ui-tooling-preview", "compose-ui-test-manifest"]
-firebase = ["firebase-analytics", "firebase-crashlytics"]
+firebase = ["firebase-analytics", "firebase-crashlytics", "firebase-config"]
 lifecycle = ["lifecycle-ktx", "lifecycle-compose"]
 retrofit = ["retrofit", "gson", "retrofit-gson-converter"]

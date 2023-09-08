@@ -69,6 +69,7 @@ android {
 dependencies {
 
     implementation(projects.core)
+    implementation(projects.data) //fixme
     implementation(projects.domain)
 
     implementation(libs.accompanist)
