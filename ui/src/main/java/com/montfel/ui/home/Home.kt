@@ -1,9 +1,9 @@
-package com.montfel.gamerguide.ui.home
+package com.montfel.ui.home
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.montfel.gamerguide.ui.destinations.GameDetailsDestination
+import com.montfel.ui.destinations.GameDetailsDestination
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator

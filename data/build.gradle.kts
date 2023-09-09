@@ -42,10 +42,9 @@ dependencies {
 
     implementation(projects.domain)
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase) //fixme
-
     implementation(libs.core)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.bundles.firebase)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(platform(libs.okhttp.bom))

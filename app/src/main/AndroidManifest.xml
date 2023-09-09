@@ -16,7 +16,7 @@
         android:theme="@style/Theme.GamerGuide"
         tools:targetApi="31">
         <activity
-            android:name=".ui.GamerGuideActivity"
+            android:name=".GamerGuideActivity"
             android:exported="true"
             android:theme="@style/Theme.GamerGuide">
             <intent-filter>
