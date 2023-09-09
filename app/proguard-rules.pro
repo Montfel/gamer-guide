@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Enable this while debugging fixme
+-keepnames class com.montfel.data.dto.** { *; }
+
+# Keep classes
+-keep class com.montfel.data.dto.** { *; }
