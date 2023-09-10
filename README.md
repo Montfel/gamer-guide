@@ -57,7 +57,7 @@ The following tools were used in the construction of the project:
 -   **Clean Architecture**
 -   **Clean Code**
 -   **MVI**
--   **Modular**
+-   **Modularization by layer**
 
 #### Libraries
 
