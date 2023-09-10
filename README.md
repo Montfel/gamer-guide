@@ -55,6 +55,7 @@ The following tools were used in the construction of the project:
 #### Architecture
 
 -   **Clean Architecture**
+-   **Clean Code**
 -   **MVI**
 -   **Modular**
 
@@ -66,7 +67,7 @@ The following tools were used in the construction of the project:
 -   **[Accompanist](https://google.github.io/accompanist/)**
 -   **[Firebase](https://firebase.google.com/)**
 -   **[Hilt](https://dagger.dev/hilt/)**
--   **[Ktor](https://ktor.io/)**
+-   **[Retrofit](https://square.github.io/retrofit/)**
 -   **[Compose Destinations](https://github.com/raamcosta/compose-destinations)**
 
 
