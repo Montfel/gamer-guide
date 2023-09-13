@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.ui.gamedetails
+package com.montfel.ui.gamedetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,6 +23,7 @@ fun GameDetails(
     LaunchedEffect(key1 = Unit) {
         viewModel.getGameDetails(id)
     }
+
     Column {
         AsyncImage(
             model = uiState.gameDetails?.backgroundImage,

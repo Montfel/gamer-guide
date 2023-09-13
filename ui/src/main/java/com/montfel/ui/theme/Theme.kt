@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.ui.theme
+package com.montfel.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.ui.home
+package com.montfel.ui.home
 
 import androidx.lifecycle.ViewModel
 import com.montfel.domain.model.GameDetails

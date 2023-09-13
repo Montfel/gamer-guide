@@ -1,11 +1,11 @@
-package com.montfel.gamerguide.ui
+package com.montfel.gamerguide
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.montfel.gamerguide.ui.navigation.NavigationComponent
-import com.montfel.gamerguide.ui.theme.GamerGuideTheme
+import com.montfel.ui.navigation.NavigationComponent
+import com.montfel.ui.theme.GamerGuideTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
