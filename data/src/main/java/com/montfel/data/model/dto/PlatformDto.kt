@@ -1,4 +1,4 @@
-package com.montfel.data.dto
+package com.montfel.data.model.dto
 
 import com.google.gson.annotations.SerializedName
 

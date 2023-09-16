@@ -2,7 +2,6 @@ package com.montfel.ui.gamedetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.domain.model.GameDetails
 import com.montfel.domain.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -12,22 +11,24 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-data class GameDetailUiState(
-    val gameDetails: GameDetails? = null
-)
-
 @HiltViewModel
-class GameDetailsViewModel @Inject constructor(
+internal class GameDetailsViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(GameDetailUiState())
-    val uiState: StateFlow<GameDetailUiState> = _uiState
+    private val _uiState = MutableStateFlow(GameDetailsUiState())
+    val uiState: StateFlow<GameDetailsUiState> = _uiState
 
-    fun getGameDetails(id: Int) {
+    fun onEvent(event: GameDetailsEvent) {
+        when (event) {
+            is GameDetailsEvent.GetGameDetails -> getGameDetails(event.id)
+        }
+    }
+
+    private fun getGameDetails(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val gameDetail = repository.getGameDetails(gameId = id)
-            gameDetail.onSuccess { result ->
+            val gameDetails = repository.getGameDetails(gameId = id)
+            gameDetails.onSuccess { result ->
                 _uiState.update {
                     it.copy(
                         gameDetails = result

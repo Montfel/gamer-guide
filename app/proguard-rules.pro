@@ -21,7 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 # Enable this while debugging fixme
--keepnames class com.montfel.data.dto.** { *; }
+-keepnames class com.montfel.data.model.** { *; }
 
 # Keep classes
--keep class com.montfel.data.dto.** { *; }
+-keep class com.montfel.data.model.** { *; }

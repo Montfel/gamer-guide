@@ -1,6 +1,6 @@
 package com.montfel.data.dataSource.remote.service
 
-import com.montfel.data.dto.GameDetailsDto
+import com.montfel.data.model.dto.GameDetailsDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
