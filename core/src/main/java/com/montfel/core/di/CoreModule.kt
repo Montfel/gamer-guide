@@ -1,9 +1,9 @@
 package com.montfel.core.di
 
-import com.montfel.data.dataSource.remote.network.GameRemoteDataSource
-import com.montfel.data.dataSource.remote.network.GameRemoteDataSourceImpl
-import com.montfel.data.repository.RepositoryImpl
-import com.montfel.domain.repository.Repository
+import com.montfel.data.dataSource.remote.network.GameDetailsRemoteDataSource
+import com.montfel.data.dataSource.remote.network.GameDetailsRemoteDataSourceImpl
+import com.montfel.data.repository.GameDetailsRepositoryImpl
+import com.montfel.domain.repository.GameDetailsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,12 +14,12 @@ import dagger.hilt.android.components.ViewModelComponent
 internal abstract class CoreModule {
 
     @Binds
-    abstract fun bindRepository(
-        repositoryImpl: RepositoryImpl
-    ): Repository
+    abstract fun bindGameDetailsRepository(
+        gameDetailsRepositoryImpl: GameDetailsRepositoryImpl
+    ): GameDetailsRepository
 
     @Binds
-    abstract fun bindGameRemoteDataSource(
-        gameRemoteDataSourceImpl: GameRemoteDataSourceImpl
-    ): GameRemoteDataSource
+    abstract fun bindGameDetailsRemoteDataSource(
+        gameDetailsRemoteDataSourceImpl: GameDetailsRemoteDataSourceImpl
+    ): GameDetailsRemoteDataSource
 }

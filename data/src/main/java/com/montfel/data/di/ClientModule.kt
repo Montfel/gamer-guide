@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ClientModule {
+internal object ClientModule {
     private const val BASE_URL = "https://rawg.io/api/"
 
     @Singleton
