@@ -11,6 +11,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
+import com.montfel.ui.components.ErrorScreen
+import com.montfel.ui.components.LoadingScreen
+import com.montfel.ui.components.StateOfUi
 import com.montfel.ui.theme.GamerGuideTheme
 import com.ramcosta.composedestinations.annotation.Destination
 
@@ -26,7 +29,23 @@ internal fun GameDetailsScreen(
         viewModel.onEvent(GameDetailsEvent.GetGameDetails(id))
     }
 
-    GameDetailsScreen(uiState = uiState)
+    when (val stateOfUi = uiState.stateOfUi) {
+        is StateOfUi.Error -> {
+            ErrorScreen(
+                title = stateOfUi.title,
+                message = stateOfUi.message,
+                onClick = { viewModel.onEvent(GameDetailsEvent.GetGameDetails(id)) }
+            )
+        }
+
+        is StateOfUi.Loading -> {
+            LoadingScreen()
+        }
+
+        is StateOfUi.Success -> {
+            GameDetailsScreen(uiState = uiState)
+        }
+    }
 }
 
 @Composable

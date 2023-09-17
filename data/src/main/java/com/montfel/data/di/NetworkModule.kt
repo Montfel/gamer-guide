@@ -23,8 +23,10 @@ internal object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideGameService(retrofit: Retrofit): GameService =
-        retrofit.create(GameService::class.java)
+    fun provideGameService(retrofit: Retrofit): GameService {
+        // fixme Tentar prover a API_KEY para o service
+        return retrofit.create(GameService::class.java)
+    }
 
     @Singleton
     @Provides
@@ -41,8 +43,9 @@ internal object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideFirebaseRemoteConfigProvider(remoteConfig: FirebaseRemoteConfig): RemoteConfigDataSource =
-        RemoteConfigDataSourceImpl(remoteConfig)
+    fun provideFirebaseRemoteConfigProvider(remoteConfig: FirebaseRemoteConfig): RemoteConfigDataSource {
+        return RemoteConfigDataSourceImpl(remoteConfig)
+    }
 
     @Singleton
     @Provides
