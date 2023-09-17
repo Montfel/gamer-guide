@@ -8,7 +8,7 @@ import javax.inject.Inject
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class GamerGuideViewModel @Inject constructor(
+internal class GamerGuideViewModel @Inject constructor(
     private val remoteConfigDataSource: RemoteConfigDataSource
 ) : ViewModel() {
     init {

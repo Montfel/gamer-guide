@@ -7,30 +7,49 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
+import com.montfel.ui.theme.GamerGuideTheme
 import com.ramcosta.composedestinations.annotation.Destination
 
 @Destination
 @Composable
-fun GameDetails(
+internal fun GameDetailsScreen(
     id: Int,
     viewModel: GameDetailsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = Unit) {
-        viewModel.getGameDetails(id)
+        viewModel.onEvent(GameDetailsEvent.GetGameDetails(id))
     }
 
-    Column {
-        AsyncImage(
-            model = uiState.gameDetails?.backgroundImage,
-            contentDescription = null,
-            modifier = Modifier.fillMaxWidth()
-        )
+    GameDetailsScreen(uiState = uiState)
+}
 
-        Text(text = uiState.gameDetails?.name ?: "")
+@Composable
+private fun GameDetailsScreen(
+    uiState: GameDetailsUiState
+) {
+    uiState.gameDetails?.let {
+        Column {
+            AsyncImage(
+                model = it.backgroundImage,
+                contentDescription = null,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Text(text = it.name)
+        }
+    }
+}
+
+@Preview
+@Composable
+private fun GameDetailsScreenPreview() {
+    GamerGuideTheme {
+        GameDetailsScreen(uiState = GameDetailsUiState())
     }
 }

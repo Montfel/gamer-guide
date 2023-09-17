@@ -11,7 +11,7 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class CoreModule {
+internal abstract class CoreModule {
 
     @Binds
     abstract fun bindRepository(
