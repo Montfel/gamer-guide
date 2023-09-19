@@ -1,8 +1,11 @@
 package com.montfel.ui.home
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.montfel.ui.destinations.GameDetailsScreenDestination
 import com.montfel.ui.theme.GamerGuideTheme
@@ -19,8 +22,10 @@ internal fun HomeScreen(navigator: DestinationsNavigator) {
 
 @Composable
 private fun HomeScreen(onEvent: () -> Unit) {
-    Button(onClick = onEvent) {
-        Text(text = "Go to game details")
+    Column(modifier = Modifier.safeDrawingPadding()) {
+        Button(onClick = onEvent) {
+            Text(text = "Go to game details")
+        }
     }
 }
 
