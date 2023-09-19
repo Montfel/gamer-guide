@@ -2,6 +2,7 @@ package com.montfel.ui.gamedetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -53,7 +54,7 @@ private fun GameDetailsScreen(
     uiState: GameDetailsUiState
 ) {
     uiState.gameDetails?.let {
-        Column {
+        Column(modifier = Modifier.safeDrawingPadding()) {
             AsyncImage(
                 model = it.backgroundImage,
                 contentDescription = null,
