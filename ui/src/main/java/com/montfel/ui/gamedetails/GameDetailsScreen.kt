@@ -27,7 +27,7 @@ internal fun GameDetailsScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = Unit) {
-        viewModel.onEvent(GameDetailsEvent.GetGameDetails(id))
+        viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id))
     }
 
     when (val stateOfUi = uiState.stateOfUi) {
@@ -35,7 +35,7 @@ internal fun GameDetailsScreen(
             ErrorScreen(
                 title = stateOfUi.title,
                 message = stateOfUi.message,
-                onClick = { viewModel.onEvent(GameDetailsEvent.GetGameDetails(id)) }
+                onClick = { viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id)) }
             )
         }
 

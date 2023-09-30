@@ -21,17 +21,15 @@ internal class GameDetailsViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(GameDetailsUiState())
     val uiState: StateFlow<GameDetailsUiState> = _uiState
 
-    fun onEvent(event: GameDetailsEvent) {
+    fun onEvent(event: GameDetailsUiEvent) {
         when (event) {
-            is GameDetailsEvent.GetGameDetails -> getGameDetails(event.id)
+            is GameDetailsUiEvent.GetGameDetails -> getGameDetails(event.id)
         }
     }
 
     private fun getGameDetails(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            _uiState.update {
-                it.copy(stateOfUi = StateOfUi.Loading)
-            }
+            _uiState.update { it.copy(stateOfUi = StateOfUi.Loading) }
 
             when (val result = gameDetailsRepository.getGameDetails(gameId = id)) {
                 is Result.Success -> {
