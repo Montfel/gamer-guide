@@ -43,7 +43,7 @@ dependencies {
 
     implementation(libs.core)
     implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
+    implementation(libs.firebase.config)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(platform(libs.okhttp.bom))

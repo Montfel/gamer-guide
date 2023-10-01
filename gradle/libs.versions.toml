@@ -68,7 +68,6 @@ retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", ve
 
 [bundles]
 compose = ["compose-material3", "compose-ui-tooling", "compose-ui-tooling-preview"]
-firebase = ["firebase-analytics", "firebase-crashlytics", "firebase-config"]
 lifecycle = ["lifecycle-ktx", "lifecycle-compose"]
 okhttp = ["okhttp", "okhttp-logging-interceptor"]
 retrofit = ["retrofit", "gson", "retrofit-gson-converter"]
