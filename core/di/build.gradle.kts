@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.montfel.data"
+    namespace = "com.montfel.core.di"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -39,16 +39,12 @@ android {
 
 dependencies {
 
+    implementation(projects.data)
     implementation(projects.domain)
 
     implementation(libs.core)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    implementation(platform(libs.okhttp.bom))
-    implementation(libs.bundles.okhttp)
-    implementation(libs.bundles.retrofit)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)

@@ -2,16 +2,14 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.montfel.core"
+    namespace = "com.montfel.core.designsystem"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
         minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -29,6 +27,14 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -39,13 +45,10 @@ android {
 }
 
 dependencies {
-
-    implementation(projects.data)
-    implementation(projects.domain)
-
+    implementation(libs.accompanist)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.bundles.compose)
     implementation(libs.core)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)

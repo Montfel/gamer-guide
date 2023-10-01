@@ -15,7 +15,7 @@ import coil.compose.AsyncImage
 import com.montfel.ui.components.ErrorScreen
 import com.montfel.ui.components.LoadingScreen
 import com.montfel.ui.components.StateOfUi
-import com.montfel.ui.theme.GamerGuideTheme
+import com.montfel.designsystem.theme.GamerGuideTheme
 import com.ramcosta.composedestinations.annotation.Destination
 
 @Destination

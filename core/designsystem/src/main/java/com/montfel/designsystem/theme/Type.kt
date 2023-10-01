@@ -1,4 +1,4 @@
-package com.montfel.ui.theme
+package com.montfel.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

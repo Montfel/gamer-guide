@@ -1,4 +1,4 @@
-package com.montfel.ui.theme
+package com.montfel.designsystem.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

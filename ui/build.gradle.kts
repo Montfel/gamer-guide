@@ -11,7 +11,6 @@ android {
 
     defaultConfig {
         minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -50,6 +49,7 @@ android {
 
 dependencies {
 
+    implementation(projects.core.designsystem)
     implementation(projects.domain)
 
     implementation(libs.accompanist)
