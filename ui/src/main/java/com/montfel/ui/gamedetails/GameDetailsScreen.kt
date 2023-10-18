@@ -14,7 +14,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.montfel.designsystem.components.ErrorScreen
 import com.montfel.designsystem.components.LoadingScreen
-import com.montfel.designsystem.components.StateOfUi
+import com.montfel.util.StateOfUi
 import com.montfel.designsystem.theme.GamerGuideTheme
 import com.ramcosta.composedestinations.annotation.Destination
 

@@ -1,4 +1,4 @@
-package com.montfel.designsystem.components
+package com.montfel.util
 
 sealed interface StateOfUi {
     data object Loading : StateOfUi

@@ -2,9 +2,9 @@ package com.montfel.ui.gamedetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.domain.helper.Result
 import com.montfel.domain.repository.GameDetailsRepository
-import com.montfel.designsystem.components.StateOfUi
+import com.montfel.util.Result
+import com.montfel.util.StateOfUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 @HiltViewModel
 internal class GameDetailsViewModel @Inject constructor(
-    private val gameDetailsRepository: GameDetailsRepository
+    private val gameDetailsRepository: GameDetailsRepository,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(GameDetailsUiState())

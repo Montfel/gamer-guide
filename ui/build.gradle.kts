@@ -50,6 +50,7 @@ android {
 dependencies {
 
     implementation(projects.core.designsystem)
+    implementation(projects.core.util)
     implementation(projects.domain)
 
     implementation(libs.accompanist)

@@ -39,6 +39,7 @@ android {
 
 dependencies {
 
+    implementation(projects.core.util)
     implementation(projects.domain)
 
     implementation(libs.core)

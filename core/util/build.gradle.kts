@@ -10,5 +10,5 @@ java {
 }
 
 dependencies {
-    implementation(projects.core.util)
+    implementation(libs.bundles.retrofit)
 }

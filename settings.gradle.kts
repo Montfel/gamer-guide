@@ -19,6 +19,7 @@ rootProject.name = "GamerGuide"
 include(":app")
 include(":core:designsystem")
 include(":core:di")
+include(":core:util")
 include(":data")
 include(":domain")
 include(":ui")

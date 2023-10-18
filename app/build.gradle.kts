@@ -90,6 +90,8 @@ dependencies {
 
     implementation(libs.activity)
     implementation(libs.core)
+    implementation(libs.destinations.core)
+    ksp(libs.destinations.ksp)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)

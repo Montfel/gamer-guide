@@ -1,4 +1,4 @@
-package com.montfel.domain.helper
+package com.montfel.util
 
 // fixme colocar textos no string resources
 sealed class Error(

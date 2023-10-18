@@ -1,7 +1,5 @@
-package com.montfel.data.helper
+package com.montfel.util
 
-import com.montfel.domain.helper.Error
-import com.montfel.domain.helper.Result
 import java.net.SocketException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
