@@ -1,4 +1,4 @@
-package com.montfel.ui.components
+package com.montfel.designsystem.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.montfel.domain.helper.Result
 import com.montfel.domain.repository.GameDetailsRepository
-import com.montfel.ui.components.StateOfUi
+import com.montfel.designsystem.components.StateOfUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
