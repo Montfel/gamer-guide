@@ -9,4 +9,10 @@
             @android:color/transparent
         </item>
     </style>
+
+    <style name="Theme.GamerGuide.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/baseline_videogame_asset_24</item>
+        <item name="postSplashScreenTheme">@style/Theme.GamerGuide</item>
+    </style>
 </resources>

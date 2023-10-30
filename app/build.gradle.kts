@@ -100,6 +100,7 @@ dependencies {
     implementation(libs.hilt.navigation)
     implementation(libs.bundles.lifecycle)
     implementation(libs.navigation)
+    implementation(libs.splash)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)

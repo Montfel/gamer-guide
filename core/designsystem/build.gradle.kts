@@ -49,6 +49,7 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.core)
+    implementation(libs.splash)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)
