@@ -4,7 +4,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
-import com.montfel.data.R
+import com.montfel.data.dataSource.remote.remoteConfig.RemoteConfig
 import com.montfel.data.dataSource.remote.remoteConfig.RemoteConfigDataSource
 import com.montfel.data.dataSource.remote.remoteConfig.RemoteConfigDataSourceImpl
 import com.montfel.data.dataSource.remote.service.GameService
@@ -34,7 +34,7 @@ internal object NetworkModule {
             minimumFetchIntervalInSeconds = 120
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
-        remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+        remoteConfig.setDefaultsAsync(RemoteConfig.defaults)
 
         return remoteConfig
     }

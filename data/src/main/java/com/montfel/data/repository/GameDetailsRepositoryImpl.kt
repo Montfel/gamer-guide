@@ -1,6 +1,7 @@
 package com.montfel.data.repository
 
 import com.montfel.data.dataSource.remote.network.GameDetailsRemoteDataSource
+import com.montfel.data.dataSource.remote.remoteConfig.RemoteConfig
 import com.montfel.data.dataSource.remote.remoteConfig.RemoteConfigDataSource
 import com.montfel.domain.model.GameDetails
 import com.montfel.domain.repository.GameDetailsRepository
@@ -16,7 +17,7 @@ class GameDetailsRepositoryImpl @Inject constructor(
 ) : GameDetailsRepository {
     override suspend fun getGameDetails(gameId: Int): Result<GameDetails> {
         return withContext(Dispatchers.IO) {
-            val apiKey = remoteConfigDataSource.getString(RemoteConfigDataSource.API_KEY) //fixme
+            val apiKey = remoteConfigDataSource.getString(RemoteConfig.API_KEY) //fixme
 
             requestWrapper {
                 gameDetailsRemoteDataSource.getGameDetails(
