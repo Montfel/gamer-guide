@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.montfel.core.designsystem"
+    namespace = "com.montfel.gamerguide.core.designsystem"
     compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {

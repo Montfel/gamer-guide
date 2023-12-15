@@ -38,12 +38,13 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.util)
+    implementation(projects.core.common)
 
     implementation(projects.feature.domain)
 
     implementation(libs.core)
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
     implementation(libs.firebase.config)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

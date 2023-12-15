@@ -12,10 +12,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.montfel.designsystem.components.ErrorScreen
-import com.montfel.designsystem.components.LoadingScreen
-import com.montfel.util.StateOfUi
-import com.montfel.designsystem.theme.GamerGuideTheme
+import com.montfel.gamerguide.core.designsystem.components.ErrorScreen
+import com.montfel.gamerguide.core.designsystem.components.LoadingScreen
+import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
+import com.montfel.gamerguide.core.common.StateOfUi
 import com.ramcosta.composedestinations.annotation.Destination
 
 @Destination

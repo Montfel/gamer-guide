@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.montfel.designsystem.theme.GamerGuideTheme
+import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 import com.montfel.gamerguide.feature.ui.destinations.GameDetailsScreenDestination
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph

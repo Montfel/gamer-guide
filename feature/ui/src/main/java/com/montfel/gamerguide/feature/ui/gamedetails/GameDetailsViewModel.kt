@@ -2,9 +2,9 @@ package com.montfel.gamerguide.feature.ui.gamedetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.montfel.gamerguide.core.common.Result
+import com.montfel.gamerguide.core.common.StateOfUi
 import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
-import com.montfel.util.Result
-import com.montfel.util.StateOfUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

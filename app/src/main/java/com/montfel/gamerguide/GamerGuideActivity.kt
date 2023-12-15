@@ -10,7 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.montfel.designsystem.theme.GamerGuideTheme
+import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 import com.montfel.gamerguide.navigation.NavigationComponent
 import dagger.hilt.android.AndroidEntryPoint
 
