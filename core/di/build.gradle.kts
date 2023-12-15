@@ -7,10 +7,10 @@ plugins {
 
 android {
     namespace = "com.montfel.core.di"
-    compileSdk = ConfigData.compileSdkVersion
+    compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {
-        minSdk = ConfigData.minSdkVersion
+        minSdk = ProjectConfig.minSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,9 +38,8 @@ android {
 }
 
 dependencies {
-
-    implementation(projects.data)
-    implementation(projects.domain)
+    implementation(projects.feature.data)
+    implementation(projects.feature.domain)
 
     implementation(libs.core)
     implementation(platform(libs.firebase.bom))

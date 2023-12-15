@@ -2,10 +2,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.montfel.core.designsystem"
+    namespace = "com.montfel.gamerguide.feature.ui"
     compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {
@@ -27,6 +28,7 @@ android {
             )
         }
     }
+
     buildFeatures {
         compose = true
     }
@@ -39,17 +41,30 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
 }
 
 dependencies {
+    implementation(projects.core.designsystem)
+    implementation(projects.core.util)
+
+    implementation(projects.feature.domain)
+
     implementation(libs.accompanist)
+    implementation(libs.coil)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.core)
-    implementation(libs.splash)
+    implementation(libs.destinations.core)
+    ksp(libs.destinations.ksp)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation)
+    implementation(libs.bundles.lifecycle)
+    implementation(libs.navigation)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)

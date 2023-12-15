@@ -2,10 +2,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.montfel.core.designsystem"
+    namespace = "com.montfel.gamerguide.feature.data"
     compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {
@@ -27,14 +28,6 @@ android {
             )
         }
     }
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -45,11 +38,18 @@ android {
 }
 
 dependencies {
-    implementation(libs.accompanist)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.compose)
+    implementation(projects.core.util)
+
+    implementation(projects.feature.domain)
+
     implementation(libs.core)
-    implementation(libs.splash)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.config)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.bundles.okhttp)
+    implementation(libs.bundles.retrofit)
 
     testImplementation(libs.junit.test)
     androidTestImplementation(libs.junit.test.android)

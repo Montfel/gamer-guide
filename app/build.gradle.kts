@@ -21,14 +21,14 @@ kotlin {
 
 android {
     namespace = "com.montfel.gamerguide"
-    compileSdk = ConfigData.compileSdkVersion
+    compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {
         applicationId = "com.montfel.gamerguide"
-        minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
-        versionCode = ConfigData.versionCode
-        versionName = ConfigData.versionName
+        minSdk = ProjectConfig.minSdkVersion
+        targetSdk = ProjectConfig.targetSdkVersion
+        versionCode = ProjectConfig.versionCode
+        versionName = ProjectConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -81,12 +81,12 @@ android {
 }
 
 dependencies {
-
     implementation(projects.core.designsystem)
     implementation(projects.core.di)
-    implementation(projects.data)
-    implementation(projects.domain)
-    implementation(projects.ui)
+
+    implementation(projects.feature.data)
+    implementation(projects.feature.domain)
+    implementation(projects.feature.ui)
 
     implementation(libs.activity)
     implementation(libs.core)

@@ -1,7 +1,7 @@
 package com.montfel.gamerguide.navigation
 
 import androidx.compose.runtime.Composable
-import com.montfel.ui.NavGraphs
+import com.montfel.gamerguide.feature.ui.NavGraphs
 import com.ramcosta.composedestinations.DestinationsNavHost
 
 @Composable

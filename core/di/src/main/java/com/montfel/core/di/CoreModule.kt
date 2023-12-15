@@ -1,9 +1,8 @@
 package com.montfel.core.di
 
-import com.montfel.data.dataSource.remote.network.GameDetailsRemoteDataSource
-import com.montfel.data.dataSource.remote.network.GameDetailsRemoteDataSourceImpl
-import com.montfel.data.repository.GameDetailsRepositoryImpl
-import com.montfel.domain.repository.GameDetailsRepository
+import com.montfel.gamerguide.feature.data.datasource.remote.network.GameDetailsRemoteDataSource
+import com.montfel.gamerguide.feature.data.repository.GameDetailsRepositoryImpl
+import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,6 +19,6 @@ internal abstract class CoreModule {
 
     @Binds
     abstract fun bindGameDetailsRemoteDataSource(
-        gameDetailsRemoteDataSourceImpl: GameDetailsRemoteDataSourceImpl
+        gameDetailsRemoteDataSourceImpl: com.montfel.gamerguide.feature.data.datasource.remote.network.GameDetailsRemoteDataSourceImpl
     ): GameDetailsRemoteDataSource
 }

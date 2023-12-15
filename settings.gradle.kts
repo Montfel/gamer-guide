@@ -17,9 +17,11 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "GamerGuide"
 
 include(":app")
+
 include(":core:designsystem")
 include(":core:di")
 include(":core:util")
-include(":data")
-include(":domain")
-include(":ui")
+
+include(":feature:data")
+include(":feature:domain")
+include(":feature:ui")
