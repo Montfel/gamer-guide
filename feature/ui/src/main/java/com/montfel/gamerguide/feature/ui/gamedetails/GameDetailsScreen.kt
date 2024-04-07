@@ -33,8 +33,7 @@ internal fun GameDetailsScreen(
     when (val stateOfUi = uiState.stateOfUi) {
         is StateOfUi.Error -> {
             ErrorScreen(
-                title = stateOfUi.title,
-                message = stateOfUi.message,
+                error = stateOfUi.errorType,
                 onClick = { viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id)) }
             )
         }
