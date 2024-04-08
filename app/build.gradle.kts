@@ -5,77 +5,15 @@ plugins {
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.ksp)
     id(libs.plugins.hilt.get().pluginId)
-}
 
-kotlin {
-    sourceSets {
-        debug {
-            kotlin.srcDir("build/generated/ksp/debug/kotlin")
-        }
-        release {
-            kotlin.srcDir("build/generated/ksp/release/kotlin")
-        }
-    }
+    alias(libs.plugins.gamerguide.android.application)
 }
 
 android {
     namespace = "com.montfel.gamerguide"
-    compileSdk = ProjectConfig.compileSdkVersion
 
     defaultConfig {
         applicationId = "com.montfel.gamerguide"
-        minSdk = ProjectConfig.minSdkVersion
-        targetSdk = ProjectConfig.targetSdkVersion
-        versionCode = ProjectConfig.versionCode
-        versionName = ProjectConfig.versionName
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-    }
-
-    buildTypes {
-        debug {
-            isMinifyEnabled = false
-            isDebuggable = true
-        }
-        release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-            signingConfig = signingConfigs.getByName("debug")
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
-    }
-
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-
-    androidResources {
-        generateLocaleConfig = true
     }
 }
 
