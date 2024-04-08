@@ -33,9 +33,17 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
+# Convention Plugins
+gamerguide-android-application = { id = "gamerguide.android.application", version = "unspecified" }
+gamerguide-android-library = { id = "gamerguide.android.library", version = "unspecified" }
+gamerguide-android-library-compose = { id = "gamerguide.android.library.compose", version = "unspecified" }
+gamerguide-kotlin-library = { id = "gamerguide.kotlin.library", version = "unspecified" }
+
+
 [libraries]
 accompanist = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+android-tools = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
@@ -56,6 +64,7 @@ hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.re
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
 junit-test = { module = "junit:junit", version.ref = "junit" }
 junit-test-android = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
+kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 lifecycle-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
