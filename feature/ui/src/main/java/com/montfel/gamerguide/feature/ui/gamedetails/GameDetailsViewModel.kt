@@ -2,7 +2,7 @@ package com.montfel.gamerguide.feature.ui.gamedetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.gamerguide.core.common.Result
+import com.montfel.gamerguide.core.common.ResultType
 import com.montfel.gamerguide.core.common.StateOfUi
 import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -32,7 +32,7 @@ internal class GameDetailsViewModel @Inject constructor(
             _uiState.update { it.copy(stateOfUi = StateOfUi.Loading) }
 
             when (val result = gameDetailsRepository.getGameDetails(gameId = id)) {
-                is Result.Success -> {
+                is ResultType.Success -> {
                     _uiState.update {
                         it.copy(
                             gameDetails = result.data,
@@ -41,14 +41,9 @@ internal class GameDetailsViewModel @Inject constructor(
                     }
                 }
 
-                is Result.Failure -> {
+                is ResultType.Failure -> {
                     _uiState.update {
-                        it.copy(
-                            stateOfUi = StateOfUi.Error(
-                                title = result.error.title,
-                                message = result.error.message,
-                            )
-                        )
+                        it.copy(stateOfUi = StateOfUi.Error(errorType = result.errorType))
                     }
                 }
             }

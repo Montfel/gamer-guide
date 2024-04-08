@@ -18,11 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.montfel.gamerguide.core.common.ErrorType
 
 @Composable
 fun ErrorScreen(
-    title: String,
-    message: String,
+    error: ErrorType,
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
@@ -34,12 +34,12 @@ fun ErrorScreen(
     ) {
         Column(modifier = Modifier.align(Alignment.TopCenter)) {
             Text(
-                text = title,
+                text = error.toString(),
                 color = MaterialTheme.colorScheme.onBackground
             )
 
             Text(
-                text = message,
+                text = "",
                 color = MaterialTheme.colorScheme.onBackground
             )
         }
