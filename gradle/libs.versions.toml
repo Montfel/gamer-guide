@@ -7,6 +7,7 @@ compose = "2024.04.00"
 composeCompiler = "1.5.11"
 core = "1.12.0"
 destinations = "1.9.53"
+detekt = "1.23.3"
 espresso = "3.5.1"
 firebase = "32.8.0"
 firebaseCrashlyticsGradle = "2.9.9"
@@ -26,6 +27,7 @@ splash = "1.0.1"
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 firebase-crashlytics-gradle = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsGradle" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
@@ -53,6 +55,7 @@ compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 core = { module = "androidx.core:core-ktx", version.ref = "core" }
 destinations-core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "destinations" }
 destinations-ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "destinations" }
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }

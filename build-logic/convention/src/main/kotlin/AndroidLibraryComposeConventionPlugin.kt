@@ -1,6 +1,7 @@
 import com.android.build.gradle.LibraryExtension
 import com.montfel.gamerguide.configureAndroidCompose
 import com.montfel.gamerguide.configureAndroidLibrary
+import com.montfel.gamerguide.configureDetekt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -11,6 +12,7 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureAndroidLibrary(this)
                 configureAndroidCompose(this)
+                configureDetekt()
             }
         }
     }

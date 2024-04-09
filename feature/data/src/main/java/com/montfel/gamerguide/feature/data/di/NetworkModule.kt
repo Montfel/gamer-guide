@@ -15,6 +15,8 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import retrofit2.Retrofit
 
+private const val MINIMUM_FETCH_INTERVAL_IN_SECONDS = 120L
+
 @Module
 @InstallIn(SingletonComponent::class)
 internal object NetworkModule {
@@ -31,7 +33,7 @@ internal object NetworkModule {
     fun provideFirebaseRemoteConfig(): FirebaseRemoteConfig {
         val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 120
+            minimumFetchIntervalInSeconds = MINIMUM_FETCH_INTERVAL_IN_SECONDS
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
         remoteConfig.setDefaultsAsync(RemoteConfig.defaults)

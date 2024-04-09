@@ -33,7 +33,7 @@ class GamerGuideActivity : ComponentActivity() {
                     -splashScreenView.view.height.toFloat()
                 )
                 slideUp.interpolator = AnticipateInterpolator()
-                slideUp.duration = 200L
+                slideUp.duration = ANIMATION_DURATION_IN_MILLISECONDS
 
                 slideUp.doOnEnd { splashScreenView.remove() }
 
@@ -47,5 +47,9 @@ class GamerGuideActivity : ComponentActivity() {
                 NavigationComponent()
             }
         }
+    }
+
+    private companion object {
+        const val ANIMATION_DURATION_IN_MILLISECONDS = 200L
     }
 }
