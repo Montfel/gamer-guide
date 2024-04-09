@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     `kotlin-dsl`
+    alias(libs.plugins.detekt)
 }
 
 group = "com.montfel.gamerguide.buildlogic"
@@ -20,6 +21,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.tools)
     compileOnly(libs.kotlin.gradle)
+    compileOnly(libs.detekt.gradlePlugin)
 }
 
 gradlePlugin {
