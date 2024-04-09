@@ -1,9 +1,9 @@
 package com.montfel.gamerguide.feature.data.di
 
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
+import com.google.firebase.remoteconfig.remoteConfig
+import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfig
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSource
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSourceImpl
