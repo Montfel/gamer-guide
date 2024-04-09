@@ -4,10 +4,5 @@ object ProjectConfig {
     const val targetSdkVersion = 34
 
     const val versionCode = 1
-
-    private const val majorVersion = 1
-    private const val minorVersion = 0
-    private const val patchVersion = 0
-
-    const val versionName = "$majorVersion.$minorVersion.$patchVersion"
+    const val versionName = "1.0.0"
 }
