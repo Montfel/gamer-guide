@@ -16,6 +16,8 @@ jobs:
       - name: Bundle install
         timeout-minutes: 5
         run: bundle install
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       - name: Build and Deploy to TestFlight
         run: |
           bundle exec fastlane android test
