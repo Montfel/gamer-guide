@@ -13,11 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "2.7"
-      - name: Bundle install for iOS Gemfile
+      - name: Bundle install
         timeout-minutes: 5
         run: bundle install
       - name: Build and Deploy to TestFlight
