@@ -34,23 +34,23 @@ platform :android do
       build_app_release
     end
     save_changelog_from_git_commits
-    publish_on_app_distribution
-    on_successful_publish_on_app_distribution()
+#     publish_on_app_distribution
+#     on_successful_publish_on_app_distribution()
   end
 
-  desc "Build a release and publish on Play Store"
-  lane :deploy do
-    build_app_release
-    publish_on_play_store
-    on_successful_publish_on_play_store()
-  end
+#   desc "Build a release and publish on Play Store"
+#   lane :deploy do
+#     build_app_release
+#     publish_on_play_store
+#     on_successful_publish_on_play_store()
+#   end
 
   after_all do |lane|
     stop_gradle
   end
 
   error do |lane, exception|
-    on_error(lane, exception)
+#     on_error(lane, exception)
     stop_gradle
   end
 
@@ -88,129 +88,129 @@ platform :android do
     changelog += lane_context[:commit][:message]
   end
 
-  desc "Publish on App Distribution"
-  private_lane :publish_on_app_distribution do
-    firebase_app_distribution(
-      service_credentials_file: ENV['PRIVATE_KEY_APP_DIST'],
-      app: ENV['FIREBASE_APP_ID'],
-      groups: ENV['FIREBASE_APP_GROUP_TESTERS'],
-      release_notes: changelog,
-      android_artifact_type: ENV['FIREBASE_ANDROID_ARTIFACT_TYPE']
-    )
-  end
+#   desc "Publish on App Distribution"
+#   private_lane :publish_on_app_distribution do
+#     firebase_app_distribution(
+#       service_credentials_file: ENV['PRIVATE_KEY_APP_DIST'],
+#       app: ENV['FIREBASE_APP_ID'],
+#       groups: ENV['FIREBASE_APP_GROUP_TESTERS'],
+#       release_notes: changelog,
+#       android_artifact_type: ENV['FIREBASE_ANDROID_ARTIFACT_TYPE']
+#     )
+#   end
 
-  desc "Publish on Play Store"
-  private_lane :publish_on_play_store do
-    upload_to_play_store(
-      track: ENV['PLAY_STORE_TRACK'],
-      skip_upload_apk: true,
-      skip_upload_metadata: true,
-      skip_upload_changelogs: true,
-      skip_upload_images: true,
-      skip_upload_screenshots: true,
-      rollout: ENV['PLAY_STORE_ROLLOUT']
-    )
-  end
+#   desc "Publish on Play Store"
+#   private_lane :publish_on_play_store do
+#     upload_to_play_store(
+#       track: ENV['PLAY_STORE_TRACK'],
+#       skip_upload_apk: true,
+#       skip_upload_metadata: true,
+#       skip_upload_changelogs: true,
+#       skip_upload_images: true,
+#       skip_upload_screenshots: true,
+#       rollout: ENV['PLAY_STORE_ROLLOUT']
+#     )
+#   end
 
   desc "Stop Gradle"
   private_lane :stop_gradle do
     sh("./../gradlew --stop")
   end
 
-  def on_error(lane, exception)
-    slack(
-      message: "Foi identificado um problema durante a execução da pipeline na lane *#{lane}*. \nSolicita-se uma revisão para compreender a origem do erro",
-      success: false,
-      slack_url: ENV['SLACK_URL'],
-      default_payloads: [:last_git_commit],
-      attachment_properties: {
-        fields: [
-          {
-            title: "Author",
-            value: lane_context[:author],
-            short: true
-          },
-          {
-            title: "Error message",
-            value: exception.to_s,
-            short: false
-          }
-        ]
-      }
-    )
-  end
-
-  def on_successful_test
-    slack(
-      message: "O Pull Request acaba de passar pela análise com sucesso e está pronto para revisão! \nPor favor, sintam-se à vontade para dar uma olhada e deixar seus comentários.",
-      success: true,
-      slack_url: ENV['SLACK_URL'],
-      default_payloads: [:git_author],
-      attachment_properties: {
-        fields: [
-          {
-            title: "Reviewers",
-            value: lane_context[:reviewers],
-            short: true
-          },
-          {
-            title: "Changes",
-            value: lane_context[:commit][:message],
-            short: true
-          }
-        ]
-      }
-    )
-  end
-
-  def on_successful_publish_on_app_distribution
-    slack(
-      message: "A versão de #{lane_context[:build_type]} #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada no App Distribution",
-      success: true,
-      slack_url: ENV['SLACK_URL'],
-      default_payloads: [],
-      attachment_properties: {
-        fields: [
-          {
-            title: "Members",
-            value: lane_context[:members].values.join(" "),
-            short: true
-          },
-          {
-            title: "QAs",
-            value: lane_context[:qas],
-            short: true
-          },
-          {
-            title: "Changes",
-            value: lane_context[:commit][:message],
-            short: true
-          }
-        ]
-      }
-    )
-  end
-
-  def on_successful_publish_on_play_store
-    slack(
-      message: "A versão #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada na track #{ENV['PLAY_STORE_TRACK']} da Play Store. \nPara instalar a nova versão acesse: https://play.google.com/apps/internaltest/4701283061108671068",
-      success: true,
-      slack_url: ENV['SLACK_URL'],
-      default_payloads: [],
-      attachment_properties: {
-        fields: [
-          {
-            title: "Members",
-            value: lane_context[:members].values.join(" "),
-            short: true
-          },
-          {
-            title: "QAs",
-            value: lane_context[:qas],
-            short: true
-          }
-        ]
-      }
-    )
-  end
+#   def on_error(lane, exception)
+#     slack(
+#       message: "Foi identificado um problema durante a execução da pipeline na lane *#{lane}*. \nSolicita-se uma revisão para compreender a origem do erro",
+#       success: false,
+#       slack_url: ENV['SLACK_URL'],
+#       default_payloads: [:last_git_commit],
+#       attachment_properties: {
+#         fields: [
+#           {
+#             title: "Author",
+#             value: lane_context[:author],
+#             short: true
+#           },
+#           {
+#             title: "Error message",
+#             value: exception.to_s,
+#             short: false
+#           }
+#         ]
+#       }
+#     )
+#   end
+#
+#   def on_successful_test
+#     slack(
+#       message: "O Pull Request acaba de passar pela análise com sucesso e está pronto para revisão! \nPor favor, sintam-se à vontade para dar uma olhada e deixar seus comentários.",
+#       success: true,
+#       slack_url: ENV['SLACK_URL'],
+#       default_payloads: [:git_author],
+#       attachment_properties: {
+#         fields: [
+#           {
+#             title: "Reviewers",
+#             value: lane_context[:reviewers],
+#             short: true
+#           },
+#           {
+#             title: "Changes",
+#             value: lane_context[:commit][:message],
+#             short: true
+#           }
+#         ]
+#       }
+#     )
+#   end
+#
+#   def on_successful_publish_on_app_distribution
+#     slack(
+#       message: "A versão de #{lane_context[:build_type]} #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada no App Distribution",
+#       success: true,
+#       slack_url: ENV['SLACK_URL'],
+#       default_payloads: [],
+#       attachment_properties: {
+#         fields: [
+#           {
+#             title: "Members",
+#             value: lane_context[:members].values.join(" "),
+#             short: true
+#           },
+#           {
+#             title: "QAs",
+#             value: lane_context[:qas],
+#             short: true
+#           },
+#           {
+#             title: "Changes",
+#             value: lane_context[:commit][:message],
+#             short: true
+#           }
+#         ]
+#       }
+#     )
+#   end
+#
+#   def on_successful_publish_on_play_store
+#     slack(
+#       message: "A versão #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada na track #{ENV['PLAY_STORE_TRACK']} da Play Store. \nPara instalar a nova versão acesse: https://play.google.com/apps/internaltest/4701283061108671068",
+#       success: true,
+#       slack_url: ENV['SLACK_URL'],
+#       default_payloads: [],
+#       attachment_properties: {
+#         fields: [
+#           {
+#             title: "Members",
+#             value: lane_context[:members].values.join(" "),
+#             short: true
+#           },
+#           {
+#             title: "QAs",
+#             value: lane_context[:qas],
+#             short: true
+#           }
+#         ]
+#       }
+#     )
+#   end
 end
