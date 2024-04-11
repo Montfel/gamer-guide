@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run composite action
-      - uses: ./.github/actions/shared
+        uses: ./.github/actions/shared
         with:
           project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
 
