@@ -1,0 +1,38 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      [ main, develop ]
+
+jobs:
+  unit-test:
+    name: Roda os testes unitários
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run composite action
+        uses: ./.github/actions/shared
+        with:
+          project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
+
+      - name: Run unit tests
+        run: |
+          bundle exec fastlane android test
+
+  app-distribution-release:
+    name: Publica no App Distribution em Release
+    if: false
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run composite action
+        uses: ./.github/actions/shared
+        with:
+          project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
+
+      - name: QaApp
+        run: |
+          bundle exec fastlane android beta debug:false
