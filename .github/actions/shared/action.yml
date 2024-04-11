@@ -17,7 +17,7 @@ runs:
 
     - name: 'Adding environment variables'
       run: |
-        cat > fastlane/.env.defaut << EOF
+        cat > ./fastlane/.env.defaut << EOF
         
         PROJECT_CONFIG_PATH="$PROJECT_CONFIG_PATH"
         
