@@ -17,7 +17,7 @@ runs:
 
     - name: 'Adding environment variables'
       run: |
-        cat > ./fastlane/.env.defaut << EOF
+        cat > fastlane/.env.defaut << EOF
         
         PROJECT_CONFIG_PATH="build-logic/convention/src/main/kotlin/ProjectConfig.kt"
         
