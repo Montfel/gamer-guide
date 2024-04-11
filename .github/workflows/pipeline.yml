@@ -6,13 +6,31 @@ on:
       [ main, develop ]
 
 jobs:
-  continuous-integration:
+  unit-test:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Run composite action
       - uses: ./.github/actions/shared
         with:
           project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
-      - name: Build and Deploy to TestFlight
+
+      - name: Run unit tests
         run: |
           bundle exec fastlane android test
+
+  app-distribution-release:
+    name: Publica no App Distribution em Release
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run composite action
+      - uses: ./.github/actions/shared
+        with:
+          project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
+
+      - name: QaApp
+        run: |
+          bundle exec fastlane android beta debug:false
