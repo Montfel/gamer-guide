@@ -4,8 +4,8 @@ platform :android do
 
   changelog = ""
   lane_context[:build_type] = ""
-  lane_context[:version_name] = android_get_version_name(gradle_file: ENV['PROJECT_CONFIG_PATH'])
-  lane_context[:version_code] = android_get_version_code(gradle_file: ENV['PROJECT_CONFIG_PATH'])
+  lane_context[:version_name] = android_get_version_name(gradle_file: "build-logic/convention/src/main/kotlin/ProjectConfig.kt")
+  lane_context[:version_code] = android_get_version_code(gradle_file: "build-logic/convention/src/main/kotlin/ProjectConfig.kt")
 
   lane_context[:members] = {}
 
