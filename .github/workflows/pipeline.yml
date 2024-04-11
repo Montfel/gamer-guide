@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   pull_request:
     branches:
-      ['main', 'develop']
+      [ main, develop ]
 
 jobs:
   continuous-integration:
@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/shared
         with:
-          project_config_path: ${{ secrets.PROJECT_CONFIG_PATH }}
+          project_config_path: 'build-logic/convention/src/main/kotlin/ProjectConfig.kt'
+
       - name: Build and Deploy to TestFlight
         run: |
           bundle exec fastlane android test
