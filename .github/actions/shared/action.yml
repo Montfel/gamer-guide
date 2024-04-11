@@ -1,4 +1,4 @@
-name: Shared Workflow
+name: 'Shared Workflow'
 
 inputs:
   project_config_path:
