@@ -7,7 +7,7 @@ on:
 
 jobs:
   continuous-integration:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/shared
