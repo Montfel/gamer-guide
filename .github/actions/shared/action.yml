@@ -19,7 +19,7 @@ runs:
       run: |
         cat > fastlane/.env.default << EOF
         
-        PROJECT_CONFIG_PATH="build-logic/convention/src/main/kotlin/ProjectConfig.kt"
+        PROJECT_CONFIG_PATH="$PROJECT_CONFIG_PATH"
         
         EOF
       shell: bash
