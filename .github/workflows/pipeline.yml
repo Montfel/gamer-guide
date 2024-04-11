@@ -10,8 +10,6 @@ jobs:
     name: Roda os testes unitários
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Run composite action
         uses: ./.github/actions/shared
         with:
@@ -25,8 +23,6 @@ jobs:
     name: Publica no App Distribution em Release
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Run composite action
         uses: ./.github/actions/shared
         with:
