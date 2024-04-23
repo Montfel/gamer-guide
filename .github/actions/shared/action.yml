@@ -20,7 +20,7 @@ runs:
 
     - name: 'Adding environment variables'
       run: |
-        cat $GOOGLE_SERVICES_JSON_DEBUG > $GOOGLE_SERVICES_JSON_DEBUG_PATH 
+        echo $GOOGLE_SERVICES_JSON_DEBUG > $GOOGLE_SERVICES_JSON_DEBUG_PATH 
         
         cat > fastlane/.env.default << EOF
         
