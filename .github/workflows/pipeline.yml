@@ -16,8 +16,8 @@ jobs:
         uses: ./.github/actions/shared
         with:
           project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
-          google_services_json_path: ${{ vars.GOOGLE_SERVICES_JSON_DEBUG_PATH }}
-          google_services_json: ${{ secrets.GOOGLE_SERVICES_JSON_DEBUG }}
+          google_services_json_debug_path: ${{ vars.GOOGLE_SERVICES_JSON_DEBUG_PATH }}
+          google_services_json_debug: ${{ secrets.GOOGLE_SERVICES_JSON_DEBUG }}
 
       - name: Run unit tests
         run: |
@@ -34,8 +34,8 @@ jobs:
         uses: ./.github/actions/shared
         with:
           project_config_path: ${{ vars.PROJECT_CONFIG_PATH }}
-          google_services_json_path: ${{ vars.GOOGLE_SERVICES_JSON_DEBUG_PATH }}
-          google_services_json: ${{ secrets.GOOGLE_SERVICES_JSON_DEBUG }}
+          google_services_json_debug_path: ${{ vars.GOOGLE_SERVICES_JSON_DEBUG_PATH }}
+          google_services_json_debug: ${{ secrets.GOOGLE_SERVICES_JSON_DEBUG }}
 
       - name: QaApp
         run: |
