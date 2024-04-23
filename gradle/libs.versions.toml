@@ -1,15 +1,15 @@
 [versions]
 accompanist = "0.32.0"
-activity = "1.8.2"
-androidGradlePlugin = "8.3.1"
+activity = "1.9.0"
+androidGradlePlugin = "8.3.2"
 coil = "2.6.0"
-compose = "2024.04.00"
-composeCompiler = "1.5.11"
-core = "1.12.0"
+compose = "2024.04.01"
+composeCompiler = "1.5.12"
+core = "1.13.0"
 destinations = "1.9.53"
 detekt = "1.23.6"
 espresso = "3.5.1"
-firebase = "32.8.0"
+firebase = "32.8.1"
 firebaseCrashlyticsGradle = "2.9.9"
 google-services = "4.4.1"
 gson = "2.10.1"
@@ -43,7 +43,6 @@ gamerguide-android-library = { id = "gamerguide.android.library", version = "uns
 gamerguide-android-library-compose = { id = "gamerguide.android.library.compose", version = "unspecified" }
 gamerguide-kotlin-library = { id = "gamerguide.kotlin.library", version = "unspecified" }
 
-
 [libraries]
 accompanist = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
@@ -53,7 +52,6 @@ compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose"
 compose-material3 = { module = "androidx.compose.material3:material3" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 core = { module = "androidx.core:core-ktx", version.ref = "core" }
 destinations-core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "destinations" }
 destinations-ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "destinations" }

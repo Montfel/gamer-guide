@@ -8,6 +8,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
 
 private const val ANDROID = "android"
+private const val DEBUG = "debug"
 private const val KOVER = "kover"
 private const val MIN_BOUND_VALUE = 0
 
@@ -15,7 +16,11 @@ private val Project.android: BaseExtension? get() = extensions.findByName(ANDROI
 
 internal fun Project.configureKover() {
     configureKoverDefaults {
-        val buildTypes = android?.buildTypes?.map { type -> type.name } ?: emptyList()
+        val buildTypes = android?.buildTypes
+            ?.mapNotNull { type ->
+                type.name.takeIf { it.contains(DEBUG, ignoreCase = true) }
+            }
+            ?: emptyList()
 
         verify {
             rule {
@@ -30,7 +35,7 @@ internal fun Project.configureKover() {
 }
 
 private fun Project.configureKoverDefaults(
-    additionalConfig: KoverDefaultReportsConfig.() -> Unit = {}
+    additionalConfig: KoverDefaultReportsConfig.() -> Unit = {},
 ) {
     pluginManager.apply(libs.findPlugin(KOVER).get().get().pluginId)
 
