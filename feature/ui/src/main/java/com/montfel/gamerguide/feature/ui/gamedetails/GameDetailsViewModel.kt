@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -19,7 +19,7 @@ internal class GameDetailsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(GameDetailsUiState())
-    val uiState: StateFlow<GameDetailsUiState> = _uiState
+    val uiState = _uiState.asStateFlow()
 
     fun onEvent(event: GameDetailsUiEvent) {
         when (event) {

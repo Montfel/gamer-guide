@@ -7,23 +7,13 @@ platform :android do
   lane_context[:version_name] = android_get_version_name(gradle_file: ENV['PROJECT_CONFIG_PATH'])
   lane_context[:version_code] = android_get_version_code(gradle_file: ENV['PROJECT_CONFIG_PATH'])
 
-  lane_context[:members] = {}
 
   lane_context[:commit] = last_git_commit
 
-  lane_context[:qas] = [""].join(" ")
-
-  lane_context[:author] = lane_context[:members].filter { |key| key == lane_context[:commit][:author_email] }.values.first
-
-  lane_context[:reviewers] = lane_context[:members].reject { |key| key == lane_context[:commit][:author_email] }.values.join(" ")
-
   desc "Runs all tests"
   lane :test do
-    build_app_debug
-    run_detekt
     run_kover_unit_tests
-#     on_successful_test()
-#     generate_unit_tests_report
+    run_detekt
   end
 
   desc "Publish on App Distribution"
@@ -35,14 +25,12 @@ platform :android do
     end
     save_changelog_from_git_commits
 #     publish_on_app_distribution
-#     on_successful_publish_on_app_distribution()
   end
 
 #   desc "Build a release and publish on Play Store"
 #   lane :deploy do
 #     build_app_release
 #     publish_on_play_store
-#     on_successful_publish_on_play_store()
 #   end
 
   after_all do |lane|
@@ -50,7 +38,6 @@ platform :android do
   end
 
   error do |lane, exception|
-#     on_error(lane, exception)
     stop_gradle
   end
 
@@ -116,101 +103,4 @@ platform :android do
   private_lane :stop_gradle do
     sh("./../gradlew --stop")
   end
-
-#   def on_error(lane, exception)
-#     slack(
-#       message: "Foi identificado um problema durante a execução da pipeline na lane *#{lane}*. \nSolicita-se uma revisão para compreender a origem do erro",
-#       success: false,
-#       slack_url: ENV['SLACK_URL'],
-#       default_payloads: [:last_git_commit],
-#       attachment_properties: {
-#         fields: [
-#           {
-#             title: "Author",
-#             value: lane_context[:author],
-#             short: true
-#           },
-#           {
-#             title: "Error message",
-#             value: exception.to_s,
-#             short: false
-#           }
-#         ]
-#       }
-#     )
-#   end
-#
-#   def on_successful_test
-#     slack(
-#       message: "O Pull Request acaba de passar pela análise com sucesso e está pronto para revisão! \nPor favor, sintam-se à vontade para dar uma olhada e deixar seus comentários.",
-#       success: true,
-#       slack_url: ENV['SLACK_URL'],
-#       default_payloads: [:git_author],
-#       attachment_properties: {
-#         fields: [
-#           {
-#             title: "Reviewers",
-#             value: lane_context[:reviewers],
-#             short: true
-#           },
-#           {
-#             title: "Changes",
-#             value: lane_context[:commit][:message],
-#             short: true
-#           }
-#         ]
-#       }
-#     )
-#   end
-#
-#   def on_successful_publish_on_app_distribution
-#     slack(
-#       message: "A versão de #{lane_context[:build_type]} #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada no App Distribution",
-#       success: true,
-#       slack_url: ENV['SLACK_URL'],
-#       default_payloads: [],
-#       attachment_properties: {
-#         fields: [
-#           {
-#             title: "Members",
-#             value: lane_context[:members].values.join(" "),
-#             short: true
-#           },
-#           {
-#             title: "QAs",
-#             value: lane_context[:qas],
-#             short: true
-#           },
-#           {
-#             title: "Changes",
-#             value: lane_context[:commit][:message],
-#             short: true
-#           }
-#         ]
-#       }
-#     )
-#   end
-#
-#   def on_successful_publish_on_play_store
-#     slack(
-#       message: "A versão #{lane_context[:version_name]} (#{lane_context[:version_code]}) foi liberada na track #{ENV['PLAY_STORE_TRACK']} da Play Store. \nPara instalar a nova versão acesse: https://play.google.com/apps/internaltest/4701283061108671068",
-#       success: true,
-#       slack_url: ENV['SLACK_URL'],
-#       default_payloads: [],
-#       attachment_properties: {
-#         fields: [
-#           {
-#             title: "Members",
-#             value: lane_context[:members].values.join(" "),
-#             short: true
-#           },
-#           {
-#             title: "QAs",
-#             value: lane_context[:qas],
-#             short: true
-#           }
-#         ]
-#       }
-#     )
-#   end
 end
