@@ -3,6 +3,10 @@ name: Shared Workflow
 inputs:
   project_config_path:
     required: true
+  google_services_json_debug_path:
+    required: true
+  google_services_json_debug:
+    required: true
 
 runs:
   using: "composite"
@@ -16,6 +20,8 @@ runs:
 
     - name: 'Adding environment variables'
       run: |
+        cat $GOOGLE_SERVICES_JSON_DEBUG > $GOOGLE_SERVICES_JSON_DEBUG_PATH 
+        
         cat > fastlane/.env.default << EOF
         
         PROJECT_CONFIG_PATH="$PROJECT_CONFIG_PATH"
@@ -24,6 +30,8 @@ runs:
       shell: bash
       env:
         PROJECT_CONFIG_PATH: ${{ inputs.project_config_path }}
+        GOOGLE_SERVICES_JSON_DEBUG_PATH: ${{ inputs.google_services_json_debug_path }}
+        GOOGLE_SERVICES_JSON_DEBUG: ${{ inputs.google_services_json_debug }}
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
