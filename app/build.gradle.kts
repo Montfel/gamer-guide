@@ -5,6 +5,7 @@ plugins {
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.ksp)
     id(libs.plugins.hilt.get().pluginId)
+    alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.gamerguide.android.application)
 }
