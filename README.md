@@ -64,7 +64,6 @@ The following tools were used in the construction of the project:
 -   **[Jetpack Compose](https://developer.android.com/jetpack/compose)**
 -   **[Material3](https://m3.material.io/)**
 -   **[Coil](https://coil-kt.github.io/coil/)**
--   **[Accompanist](https://google.github.io/accompanist/)**
 -   **[Firebase](https://firebase.google.com/)**
 -   **[Hilt](https://dagger.dev/hilt/)**
 -   **[Retrofit](https://square.github.io/retrofit/)**
