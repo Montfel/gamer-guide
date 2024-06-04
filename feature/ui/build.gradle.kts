@@ -17,7 +17,6 @@ dependencies {
 
     implementation(projects.feature.domain)
 
-    implementation(libs.accompanist)
     implementation(libs.coil)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)

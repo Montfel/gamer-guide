@@ -1,5 +1,4 @@
 [versions]
-accompanist = "0.34.0"
 activity = "1.9.0"
 androidGradlePlugin = "8.4.1"
 coil = "2.6.0"
@@ -8,9 +7,9 @@ core = "1.13.1"
 destinations = "1.10.2"
 detekt = "1.23.6"
 espresso = "3.5.1"
-firebase = "33.0.0"
+firebase = "33.1.0"
 firebaseCrashlyticsGradle = "3.0.1"
-google-services = "4.4.1"
+google-services = "4.4.2"
 gson = "2.11.0"
 hilt = "2.51"
 hiltNavigation = "1.2.0"
@@ -19,7 +18,7 @@ junit-android = "1.1.5"
 kotlin = "2.0.0"
 kover = "0.7.6" #
 ksp = "2.0.0-1.0.21"
-lifecycle = "2.7.0" #
+lifecycle = "2.8.1"
 okhttp = "4.12.0"
 retrofit = "2.11.0"
 splash = "1.0.1"
@@ -44,11 +43,11 @@ gamerguide-android-library-compose = { id = "gamerguide.android.library.compose"
 gamerguide-kotlin-library = { id = "gamerguide.kotlin.library", version = "unspecified" }
 
 [libraries]
-accompanist = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
 android-tools = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version = "1.7.0-beta02" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
@@ -79,7 +78,7 @@ retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", ve
 splash = { module = "androidx.core:core-splashscreen", version.ref = "splash" }
 
 [bundles]
-compose = ["compose-material3", "compose-ui-tooling", "compose-ui-tooling-preview"]
+compose = ["compose-material3", "compose-foundation", "compose-ui-tooling", "compose-ui-tooling-preview"]
 lifecycle = ["lifecycle-ktx", "lifecycle-compose"]
 okhttp = ["okhttp", "okhttp-logging-interceptor"]
 retrofit = ["retrofit", "gson", "retrofit-gson-converter"]

@@ -13,7 +13,6 @@ android {
 dependencies {
     implementation(projects.core.common)
 
-    implementation(libs.accompanist)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.core)
