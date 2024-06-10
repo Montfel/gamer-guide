@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.montfel.gamerguide.core.designsystem.components.ItemListHomeScreen
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 import com.montfel.gamerguide.feature.ui.destinations.GameDetailsScreenDestination
 import com.ramcosta.composedestinations.annotation.Destination
@@ -23,6 +24,7 @@ internal fun HomeScreen(navigator: DestinationsNavigator) {
 @Composable
 private fun HomeScreen(onEvent: () -> Unit) {
     Column(modifier = Modifier.safeDrawingPadding()) {
+        ItemListHomeScreen()
         Button(onClick = onEvent) {
             Text(text = "Go to game details")
         }
