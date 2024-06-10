@@ -30,7 +30,6 @@ import com.montfel.gamerguide.core.designsystem.theme.GrayCardContainerColor
 @Composable
 fun ItemListHomeScreen(modifier: Modifier = Modifier) {
     Card(
-        onClick = { /*TODO*/ },
         modifier = modifier
             .padding(horizontal = 15.dp, vertical = 8.dp)
             .height(125.dp)
