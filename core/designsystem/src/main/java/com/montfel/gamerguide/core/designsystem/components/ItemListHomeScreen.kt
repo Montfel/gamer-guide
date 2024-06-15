@@ -7,9 +7,10 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -20,10 +21,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.montfel.gamerguide.core.designsystem.R
 import com.montfel.gamerguide.core.designsystem.theme.CyanButtonColor
 import com.montfel.gamerguide.core.designsystem.theme.GrayCardContainerColor
 
@@ -31,15 +35,15 @@ import com.montfel.gamerguide.core.designsystem.theme.GrayCardContainerColor
 fun ItemListHomeScreen(modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
-            .padding(horizontal = 15.dp, vertical = 8.dp)
-            .height(125.dp)
-            .width(330.dp),
+            .padding(horizontal = 14.dp, vertical = 8.dp)
+            .fillMaxWidth()
+            .height(125.dp),
         colors = CardDefaults.cardColors(containerColor = GrayCardContainerColor)
     ) {
 
         Row(
             modifier = Modifier
-                .padding(horizontal = 8.dp, vertical = 17.dp)
+                .padding(horizontal = 8.dp, vertical = 16.dp)
                 .fillMaxSize(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
@@ -47,15 +51,21 @@ fun ItemListHomeScreen(modifier: Modifier = Modifier) {
 
             AsyncImage(
                 model = "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+                contentScale = ContentScale.Crop,
                 contentDescription = "Item List Image",
                 modifier = Modifier
-                    .height(80.dp)
-                    .width(80.dp)
+                    .size(80.dp)
+                    .padding(horizontal = 4.dp)
             )
 
-            Column(modifier = Modifier.fillMaxHeight(), verticalArrangement = Arrangement.SpaceBetween) {
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(2f),
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
                 Text(text = "Minecraft", maxLines = 1, overflow = TextOverflow.Ellipsis, color = Color.White)
-                Text(text = "Release date: 03/06/2024",  overflow = TextOverflow.Ellipsis, color = Color.White)
+                Text(text = "Released: 03/06/2024",  overflow = TextOverflow.Ellipsis, color = Color.White)
                 Row {
                     GenreIcon(genreName = "Action")
                     GenreIcon(genreName = "Shooter")
@@ -67,9 +77,10 @@ fun ItemListHomeScreen(modifier: Modifier = Modifier) {
                 contentPadding = PaddingValues(horizontal = 8.dp, vertical = 1.dp),
                 colors = ButtonDefaults.outlinedButtonColors(containerColor = Color.Transparent),
                 border = BorderStroke(1.dp, CyanButtonColor),
-                shape = RoundedCornerShape(5.dp)
+                shape = RoundedCornerShape(5.dp),
+                modifier = Modifier.weight(1f)
             ) {
-                Text(text = "Details", color = CyanButtonColor)
+                Text(text = stringResource(id = R.string.detail_text), color = CyanButtonColor)
             }
 
         }

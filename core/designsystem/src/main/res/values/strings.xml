@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">GamerGuide</string>
+    <string name="detail_text" translatable="false">Details</string>
 </resources>

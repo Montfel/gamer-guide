@@ -14,7 +14,7 @@ import com.montfel.gamerguide.core.designsystem.theme.GenreContainerGrayColor
 @Composable
 fun GenreIcon (genreName: String, modifier: Modifier = Modifier) {
     Surface (modifier = modifier.padding(end = 8.dp), shape = CircleShape, color = GenreContainerGrayColor, contentColor = Color.White){
-        Text(text = genreName, modifier.padding(horizontal = 8.dp, vertical = 3.dp))
+        Text(text = genreName, modifier.padding(horizontal = 8.dp, vertical = 4.dp))
     }
 }
 
