@@ -6,7 +6,7 @@ import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
@@ -65,20 +65,12 @@ internal fun Project.configureAndroidLibrary(
     libraryExtension: LibraryExtension,
 ) {
     libraryExtension.apply {
-        defaultConfig {
-            consumerProguardFiles("consumer-rules.pro")
-        }
-
         buildTypes {
             debug {
                 isMinifyEnabled = false
             }
             release {
                 isMinifyEnabled = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-                )
             }
         }
 
@@ -108,7 +100,7 @@ private fun configureAndroid(
 }
 
 private fun Project.configureKotlin() {
-    with(extensions.getByType<KotlinAndroidProjectExtension>()) {
+    extensions.configure<KotlinAndroidProjectExtension> {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_21)
         }
