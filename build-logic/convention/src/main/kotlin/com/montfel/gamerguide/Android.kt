@@ -6,7 +6,7 @@ import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
@@ -29,6 +29,7 @@ internal fun Project.configureAndroidApplication(
                 isMinifyEnabled = false
                 isDebuggable = true
             }
+
             release {
                 isMinifyEnabled = true
                 isShrinkResources = true
@@ -39,6 +40,7 @@ internal fun Project.configureAndroidApplication(
                 signingConfig = signingConfigs.getByName("debug")
             }
         }
+
         buildFeatures {
             buildConfig = true
         }
@@ -48,6 +50,7 @@ internal fun Project.configureAndroidApplication(
                 excludes += "/META-INF/{AL2.0,LGPL2.1}"
             }
         }
+
         androidResources {
             generateLocaleConfig = true
         }
@@ -62,20 +65,12 @@ internal fun Project.configureAndroidLibrary(
     libraryExtension: LibraryExtension,
 ) {
     libraryExtension.apply {
-        defaultConfig {
-            consumerProguardFiles("consumer-rules.pro")
-        }
-
         buildTypes {
             debug {
                 isMinifyEnabled = false
             }
             release {
                 isMinifyEnabled = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-                )
             }
         }
 
@@ -98,16 +93,16 @@ private fun configureAndroid(
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
         }
     }
 }
 
 private fun Project.configureKotlin() {
-    with(extensions.getByType<KotlinAndroidProjectExtension>()) {
+    extensions.configure<KotlinAndroidProjectExtension> {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
 }
