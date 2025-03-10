@@ -10,7 +10,7 @@ import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.withType
 
 internal fun Project.configureDetekt() {
-    pluginManager.apply(libs.findLibrary("detekt-gradlePlugin").get().get().group.toString())
+    pluginManager.apply(libs.findLibrary("detekt-gradlePlugin").get().get().group)
     val extension = extensions.getByType<DetektExtension>()
 
     with(extension) {
@@ -29,10 +29,10 @@ internal fun Project.configureDetekt() {
         }
 
         tasks.withType<Detekt>().configureEach {
-            jvmTarget = JavaVersion.VERSION_17.toString()
+            jvmTarget = JavaVersion.VERSION_21.toString()
         }
         tasks.withType<DetektCreateBaselineTask>().configureEach {
-            jvmTarget = JavaVersion.VERSION_17.toString()
+            jvmTarget = JavaVersion.VERSION_21.toString()
         }
     }
 }

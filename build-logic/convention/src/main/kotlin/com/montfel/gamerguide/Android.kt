@@ -29,6 +29,7 @@ internal fun Project.configureAndroidApplication(
                 isMinifyEnabled = false
                 isDebuggable = true
             }
+
             release {
                 isMinifyEnabled = true
                 isShrinkResources = true
@@ -39,6 +40,7 @@ internal fun Project.configureAndroidApplication(
                 signingConfig = signingConfigs.getByName("debug")
             }
         }
+
         buildFeatures {
             buildConfig = true
         }
@@ -48,6 +50,7 @@ internal fun Project.configureAndroidApplication(
                 excludes += "/META-INF/{AL2.0,LGPL2.1}"
             }
         }
+
         androidResources {
             generateLocaleConfig = true
         }
@@ -98,8 +101,8 @@ private fun configureAndroid(
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
         }
     }
 }
@@ -107,7 +110,7 @@ private fun configureAndroid(
 private fun Project.configureKotlin() {
     with(extensions.getByType<KotlinAndroidProjectExtension>()) {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
 }
