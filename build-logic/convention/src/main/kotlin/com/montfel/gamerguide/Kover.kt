@@ -37,7 +37,7 @@ internal fun Project.configureKover() {
 private fun Project.configureKoverDefaults(
     additionalConfig: KoverDefaultReportsConfig.() -> Unit = {},
 ) {
-    pluginManager.apply(libs.findPlugin(KOVER).get().get().pluginId)
+    pluginManager.apply(libs.plugins.kover.get().pluginId)
 
     extensions.getByType<KoverReportExtension>().apply {
         defaults {

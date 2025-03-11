@@ -1,6 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.montfel.gamerguide.configureAndroidApplication
-import com.montfel.gamerguide.configureAndroidCompose
+import com.montfel.gamerguide.configureCompose
 import com.montfel.gamerguide.configureDetekt
 import com.montfel.gamerguide.configureKover
 import com.montfel.gamerguide.configureKoverForRootProject
@@ -14,7 +14,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             extensions.configure<ApplicationExtension> {
                 configureAndroidApplication(this)
-                configureAndroidCompose(this)
+                configureCompose(this)
                 configureDetekt()
                 configureKover()
             }

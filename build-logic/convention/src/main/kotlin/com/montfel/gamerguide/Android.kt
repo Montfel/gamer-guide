@@ -1,6 +1,5 @@
 package com.montfel.gamerguide
 
-import ProjectConfig
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
@@ -14,10 +13,13 @@ internal fun Project.configureAndroidApplication(
     applicationExtension: ApplicationExtension,
 ) {
     applicationExtension.apply {
+        namespace = libs.versions.app.namespace.get()
+
         defaultConfig {
-            targetSdk = ProjectConfig.targetSdkVersion
-            versionCode = ProjectConfig.versionCode
-            versionName = ProjectConfig.versionName
+            applicationId = libs.versions.app.namespace.get()
+            targetSdk = libs.versions.sdk.target.get().toInt()
+            versionCode = libs.versions.app.version.code.get().toInt()
+            versionName = libs.versions.app.version.name.get()
 
             vectorDrawables {
                 useSupportLibrary = true
@@ -80,14 +82,14 @@ internal fun Project.configureAndroidLibrary(
     configureKotlin()
 }
 
-private fun configureAndroid(
+private fun Project.configureAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
-        compileSdk = ProjectConfig.compileSdkVersion
+        compileSdk = libs.versions.sdk.compile.get().toInt()
 
         defaultConfig {
-            minSdk = ProjectConfig.minSdkVersion
+            minSdk = libs.versions.sdk.min.get().toInt()
 
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
