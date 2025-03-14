@@ -7,13 +7,12 @@ platform :android do
   lane_context[:version_name] = android_get_version_name(gradle_file: ENV['PROJECT_CONFIG_PATH'])
   lane_context[:version_code] = android_get_version_code(gradle_file: ENV['PROJECT_CONFIG_PATH'])
 
-
   lane_context[:commit] = last_git_commit
 
   desc "Runs all tests"
   lane :test do
-    run_kover_unit_tests
     run_detekt
+    run_kover_unit_tests
   end
 
   desc "Publish on App Distribution"
