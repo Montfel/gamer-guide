@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-internal class GameDetailsViewModel @Inject constructor(
+class GameDetailsViewModel @Inject constructor(
     private val gameDetailsRepository: GameDetailsRepository,
 ) : ViewModel() {
 

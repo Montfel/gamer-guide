@@ -41,7 +41,7 @@
 
 ### Pre-requisites
 
--   You must have an Android device with Android 5.0 Lollipop or later.
+-   You must have an Android device with Android 7.0 Nougat or later.
 
 ---
 
@@ -67,15 +67,15 @@ The following tools were used in the construction of the project:
 -   **[Firebase](https://firebase.google.com/)**
 -   **[Hilt](https://dagger.dev/hilt/)**
 -   **[Retrofit](https://square.github.io/retrofit/)**
--   **[Compose Destinations](https://github.com/raamcosta/compose-destinations)**
+-   **[Compose Navigation](https://developer.android.com/develop/ui/compose/navigation)**
 
 
 
 #### Util
 
--   Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)** with **[Version Catalog](https://docs.gradle.org/current/userguide/platforms.html)**
--   IDE:  **[Android Studio](https://developer.android.com/studio)**
--   Icons:  **[Flaticons](https://www.flaticon.com/)**
+-  Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)** with **[Version Catalog](https://docs.gradle.org/current/userguide/platforms.html)** and **[Convention Plugins](https://docs.gradle.org/current/samples/sample_convention_plugins.html)**
+-  IDE:  **[Android Studio](https://developer.android.com/studio)**
+-  Icons:  **[Flaticons](https://www.flaticon.com/)**
 
 ---
 

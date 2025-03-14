@@ -21,8 +21,6 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.core)
-    implementation(libs.destinations.core)
-    ksp(libs.destinations.ksp)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation)
