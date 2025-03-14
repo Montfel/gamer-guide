@@ -18,8 +18,8 @@ internal fun Project.configureAndroidApplication(
         defaultConfig {
             applicationId = libs.versions.app.namespace.get()
             targetSdk = libs.versions.sdk.target.get().toInt()
-            versionCode = libs.versions.app.version.code.get().toInt()
-            versionName = libs.versions.app.version.name.get()
+            versionCode = libs.versions.versionCode.get().toInt()
+            versionName = libs.versions.versionName.get()
 
             vectorDrawables {
                 useSupportLibrary = true
