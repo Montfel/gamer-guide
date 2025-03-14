@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
 
-    alias(libs.plugins.gamerguide.android.library.compose)
+    alias(libs.plugins.gamerguide.compose.library)
 }
 
 android {

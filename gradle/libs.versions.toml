@@ -1,8 +1,16 @@
 [versions]
+sdk-min = "24"
+sdk-compile = "35"
+sdk-target = "35"
+
+app-namespace = "com.montfel.gamerguide"
+versionCode = "1"
+versionName = "1.0.0"
+
 activity = "1.10.1"
 androidGradlePlugin = "8.9.0"
 coil = "2.7.0"
-compose = "2025.02.00"
+compose = "2025.03.00"
 core = "1.15.0"
 destinations = "1.10.2"
 detekt = "1.23.8"
@@ -16,7 +24,7 @@ hiltNavigation = "1.2.0"
 junit = "4.13.2"
 junit-android = "1.2.1"
 kotlin = "2.1.10"
-kover = "0.7.6" #
+kover = "0.7.6"
 ksp = "2.1.10-1.0.31"
 lifecycle = "2.8.7"
 okhttp = "4.12.0"
@@ -39,12 +47,11 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 # Convention Plugins
 gamerguide-android-application = { id = "gamerguide.android.application", version = "unspecified" }
 gamerguide-android-library = { id = "gamerguide.android.library", version = "unspecified" }
-gamerguide-android-library-compose = { id = "gamerguide.android.library.compose", version = "unspecified" }
+gamerguide-compose-library = { id = "gamerguide.compose.library", version = "unspecified" }
 gamerguide-kotlin-library = { id = "gamerguide.kotlin.library", version = "unspecified" }
 
 [libraries]
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
-android-tools = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation" }
@@ -54,20 +61,21 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 core = { module = "androidx.core:core-ktx", version.ref = "core" }
 destinations-core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "destinations" }
 destinations-ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "destinations" }
-detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 firebase-config = { module = "com.google.firebase:firebase-config" }
+gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+gradle-plugin-detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+gradle-plugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-plugin-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
 junit-test = { module = "junit:junit", version.ref = "junit" }
 junit-test-android = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
-kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-kover-gradlePlugin = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 lifecycle-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
