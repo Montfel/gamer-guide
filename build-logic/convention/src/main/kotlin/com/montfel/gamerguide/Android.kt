@@ -8,11 +8,16 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import java.util.Properties
 
 internal fun Project.configureAndroidApplication(
     applicationExtension: ApplicationExtension,
 ) {
     applicationExtension.apply {
+        val secretsFile = rootProject.file("secrets.properties")
+        val secretsProperties = Properties()
+        secretsProperties.load(secretsFile.inputStream())
+
         namespace = libs.versions.app.namespace.get()
 
         defaultConfig {
@@ -30,6 +35,12 @@ internal fun Project.configureAndroidApplication(
             debug {
                 isMinifyEnabled = false
                 isDebuggable = true
+
+                buildConfigField(
+                    "String",
+                    "BASE_URL",
+                    secretsProperties.getProperty("baseUrl")
+                )
             }
 
             release {
@@ -40,6 +51,12 @@ internal fun Project.configureAndroidApplication(
                     "proguard-rules.pro"
                 )
                 signingConfig = signingConfigs.getByName("debug")
+
+                buildConfigField(
+                    "String",
+                    "BASE_URL",
+                    secretsProperties.getProperty("baseUrl")
+                )
             }
         }
 

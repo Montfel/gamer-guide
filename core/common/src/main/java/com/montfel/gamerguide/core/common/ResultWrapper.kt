@@ -1,10 +1,12 @@
 package com.montfel.gamerguide.core.common
 
+import io.ktor.client.plugins.ClientRequestException
+import io.ktor.client.plugins.RedirectResponseException
+import io.ktor.client.plugins.ServerResponseException
 import java.net.SocketException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import kotlin.coroutines.cancellation.CancellationException
-import retrofit2.HttpException
 
 suspend fun <T : Any> resultWrapper(call: suspend () -> T): ResultType<T> {
     return runCatching {
@@ -17,7 +19,15 @@ suspend fun <T : Any> resultWrapper(call: suspend () -> T): ResultType<T> {
 }
 
 fun getErrorTypeFromThrowable(it: Throwable) = when (it) {
-    is HttpException -> {
+    is RedirectResponseException -> { // for 3xx responses
+        ErrorType.Http
+    }
+
+    is ClientRequestException -> { // for 4xx responses
+        ErrorType.Http
+    }
+
+    is ServerResponseException -> { // for 5xx responses
         ErrorType.Http
     }
 
@@ -34,6 +44,7 @@ fun getErrorTypeFromThrowable(it: Throwable) = when (it) {
     }
 
     else -> {
+        it.printStackTrace()
         ErrorType.Unknown
     }
 }

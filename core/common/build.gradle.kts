@@ -5,5 +5,5 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.bundles.retrofit)
+    implementation(libs.ktor.client.core)
 }

@@ -66,10 +66,8 @@ The following tools were used in the construction of the project:
 -   **[Coil](https://coil-kt.github.io/coil/)**
 -   **[Firebase](https://firebase.google.com/)**
 -   **[Hilt](https://dagger.dev/hilt/)**
--   **[Retrofit](https://square.github.io/retrofit/)**
+-   **[Ktor](https://ktor.io/)**
 -   **[Compose Navigation](https://developer.android.com/develop/ui/compose/navigation)**
-
-
 
 #### Util
 

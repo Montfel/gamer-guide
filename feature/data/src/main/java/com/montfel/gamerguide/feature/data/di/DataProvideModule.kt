@@ -1,5 +1,7 @@
 package com.montfel.gamerguide.feature.data.di
 
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.analytics
 import com.google.firebase.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.remoteConfig
@@ -7,26 +9,21 @@ import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfig
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSource
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSourceImpl
-import com.montfel.gamerguide.feature.data.datasource.remote.service.GameService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-import retrofit2.Retrofit
 
 private const val MINIMUM_FETCH_INTERVAL_IN_SECONDS = 120L
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object NetworkModule {
+internal object DataProvideModule {
 
     @Singleton
     @Provides
-    fun provideGameService(retrofit: Retrofit): GameService {
-        // fixme Tentar prover a API_KEY para o service
-        return retrofit.create(GameService::class.java)
-    }
+    fun provideFirebaseAnalytics(): FirebaseAnalytics = Firebase.analytics
 
     @Singleton
     @Provides

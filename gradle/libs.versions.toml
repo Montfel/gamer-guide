@@ -17,7 +17,6 @@ espresso = "3.6.1"
 firebase = "33.10.0"
 firebaseCrashlyticsGradle = "3.0.3"
 google-services = "4.4.2"
-gson = "2.11.0"
 hilt = "2.55"
 hiltNavigation = "1.2.0"
 junit = "4.13.2"
@@ -25,11 +24,11 @@ junit-android = "1.2.1"
 kotlin = "2.1.10"
 kotlinSerialization = "1.8.0"
 kover = "0.7.6"
+ktor = "3.1.1"
 ksp = "2.1.10-1.0.31"
 lifecycle = "2.8.7"
 navigation = "2.8.9"
 okhttp = "4.12.0"
-retrofit = "2.11.0"
 splash = "1.0.1"
 
 [plugins]
@@ -70,25 +69,29 @@ gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", ve
 gradle-plugin-detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 gradle-plugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-plugin-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
 junit-test = { module = "junit:junit", version.ref = "junit" }
 junit-test-android = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
 kotlin-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinSerialization" }
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-mock = { group = "io.ktor", name = "ktor-client-mock", version.ref = "ktor" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 lifecycle-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
 okhttp = { module = "com.squareup.okhttp3:okhttp" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 splash = { module = "androidx.core:core-splashscreen", version.ref = "splash" }
 
 [bundles]
 compose = ["compose-material3", "compose-foundation", "compose-ui-tooling", "compose-ui-tooling-preview"]
 lifecycle = ["lifecycle-ktx", "lifecycle-compose"]
 okhttp = ["okhttp", "okhttp-logging-interceptor"]
-retrofit = ["retrofit", "gson", "retrofit-gson-converter"]
