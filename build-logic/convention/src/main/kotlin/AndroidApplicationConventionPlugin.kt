@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.montfel.gamerguide.applyAndroidApplicationPlugins
 import com.montfel.gamerguide.configureAndroidApplication
 import com.montfel.gamerguide.configureCompose
 import com.montfel.gamerguide.configureDetekt
@@ -12,6 +13,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target.rootProject) { configureKoverForRootProject() }
         with(target) {
+            applyAndroidApplicationPlugins()
+
             extensions.configure<ApplicationExtension> {
                 configureAndroidApplication(this)
                 configureCompose(this)

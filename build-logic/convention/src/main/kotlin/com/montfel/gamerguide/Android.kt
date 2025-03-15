@@ -5,6 +5,7 @@ import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
@@ -97,6 +98,16 @@ internal fun Project.configureAndroidLibrary(
     }
 
     configureKotlin()
+}
+
+internal fun Project.applyAndroidLibraryPlugins() {
+    apply(plugin = libs.plugins.android.library.get().pluginId)
+    apply(plugin = libs.plugins.kotlin.android.get().pluginId)
+    apply(plugin = libs.plugins.dependency.analysis.get().pluginId)
+}
+
+internal fun Project.applyAndroidApplicationPlugins() {
+    apply(plugin = libs.plugins.dependency.analysis.get().pluginId)
 }
 
 private fun Project.configureAndroid(
