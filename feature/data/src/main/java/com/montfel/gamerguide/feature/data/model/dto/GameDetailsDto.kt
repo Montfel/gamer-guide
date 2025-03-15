@@ -1,20 +1,22 @@
 package com.montfel.gamerguide.feature.data.model.dto
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class GameDetailsDto(
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 
-    @SerializedName("description")
+    @SerialName("description")
     val description: String,
 
-    @SerializedName("released")
+    @SerialName("released")
     val released: String,
 
-    @SerializedName("background_image")
+    @SerialName("background_image")
     val backgroundImage: String,
 
-    @SerializedName("platforms")
+    @SerialName("platforms")
     val platforms: List<PlatformsDto>
 )

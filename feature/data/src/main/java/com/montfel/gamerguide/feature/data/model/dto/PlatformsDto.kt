@@ -1,11 +1,13 @@
 package com.montfel.gamerguide.feature.data.model.dto
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class PlatformsDto(
-    @SerializedName("platform")
+    @SerialName("platform")
     val platform: PlatformDto,
 
-    @SerializedName("released_at")
-    val releasedAt: String,
+    @SerialName("released_at")
+    val releasedAt: String? = null,
 )
