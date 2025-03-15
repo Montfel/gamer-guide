@@ -1,6 +1,8 @@
 package com.montfel.gamerguide
 
 import com.android.build.api.dsl.CommonExtension
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.apply
 
 internal fun configureCompose(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
@@ -10,4 +12,8 @@ internal fun configureCompose(
             compose = true
         }
     }
+}
+
+internal fun Project.applyComposePlugins() {
+    apply(plugin = libs.plugins.compose.compiler.get().pluginId)
 }

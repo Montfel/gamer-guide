@@ -1,8 +1,4 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.compose.compiler)
-
     alias(libs.plugins.gamerguide.compose.library)
 }
 
@@ -14,11 +10,8 @@ dependencies {
     implementation(projects.core.common)
 
     implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.compose)
-    implementation(libs.core)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.ui.tooling)
     implementation(libs.splash)
-
-    testImplementation(libs.junit.test)
-    androidTestImplementation(libs.junit.test.android)
-    androidTestImplementation(libs.espresso)
 }

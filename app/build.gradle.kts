@@ -34,13 +34,7 @@ dependencies {
     implementation(libs.firebase.crashlytics)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    implementation(libs.hilt.navigation)
     implementation(libs.kotlin.serialization.core)
     implementation(libs.navigation)
-    implementation(libs.bundles.lifecycle)
     implementation(libs.splash)
-
-    testImplementation(libs.junit.test)
-    androidTestImplementation(libs.junit.test.android)
-    androidTestImplementation(libs.espresso)
 }
