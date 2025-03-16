@@ -6,9 +6,8 @@ import com.montfel.gamerguide.feature.domain.model.GameDetails
 import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
-class GameDetailsRepositoryImpl @Inject constructor(
+class GameDetailsRepositoryImpl(
     private val gameDetailsRemoteDataSource: GameDetailsRemoteDataSource,
 ) : GameDetailsRepository {
     override suspend fun getGameDetails(gameId: Int): ResultType<GameDetails> {

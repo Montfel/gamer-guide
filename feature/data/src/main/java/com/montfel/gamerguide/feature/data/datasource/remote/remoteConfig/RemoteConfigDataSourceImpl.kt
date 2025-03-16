@@ -1,11 +1,10 @@
 package com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-internal class RemoteConfigDataSourceImpl @Inject constructor(
+internal class RemoteConfigDataSourceImpl(
     private val firebaseRemoteConfig: FirebaseRemoteConfig,
 ) : RemoteConfigDataSource {
     override suspend fun init(): Boolean {

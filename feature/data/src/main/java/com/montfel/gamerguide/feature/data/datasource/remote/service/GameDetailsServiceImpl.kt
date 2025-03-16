@@ -6,9 +6,8 @@ import com.montfel.gamerguide.feature.data.model.dto.GameDetailsDto
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.http.appendPathSegments
-import javax.inject.Inject
 
-internal class GameDetailsServiceImpl @Inject constructor(
+internal class GameDetailsServiceImpl(
     private val httpProvider: HttpProvider,
     private val buildConfigFieldsProvider: BuildConfigFieldsProvider,
 ) : GameDetailsService {

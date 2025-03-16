@@ -14,15 +14,24 @@ dependencies {
 
     implementation(projects.feature.domain)
 
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.config)
-    implementation(libs.hilt.core)
-    ksp(libs.hilt.compiler)
+
+    // OkHttp
     implementation(platform(libs.okhttp.bom))
     implementation(libs.bundles.okhttp)
+
+    // Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+
+    // Kotlin Serialization
     implementation(libs.kotlin.serialization.core)
     implementation(libs.kotlin.serialization.json)
+
+    // Ktor
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.client.core)

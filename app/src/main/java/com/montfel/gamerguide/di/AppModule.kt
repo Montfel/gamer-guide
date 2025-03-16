@@ -1,18 +1,13 @@
 package com.montfel.gamerguide.di
 
+import com.montfel.gamerguide.GamerGuideViewModel
 import com.montfel.gamerguide.buildconfig.ApplicationBuildConfigFieldsProvider
 import com.montfel.gamerguide.core.common.buildconfig.BuildConfigFieldsProvider
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModelOf
+import org.koin.dsl.module
 
-@Module
-@InstallIn(SingletonComponent::class)
-internal abstract class AppModule {
-
-    @Binds
-    abstract fun bindApplicationBuildConfigFieldsProvider(
-        applicationBuildConfigFieldsProvider: ApplicationBuildConfigFieldsProvider
-    ): BuildConfigFieldsProvider
+val appModule = module {
+    singleOf<BuildConfigFieldsProvider>(::ApplicationBuildConfigFieldsProvider)
+    viewModelOf(::GamerGuideViewModel)
 }

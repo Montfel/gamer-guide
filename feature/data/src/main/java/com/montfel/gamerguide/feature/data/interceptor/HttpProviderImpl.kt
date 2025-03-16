@@ -10,9 +10,8 @@ import io.ktor.client.request.HttpRequestPipeline
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import okhttp3.logging.HttpLoggingInterceptor
-import javax.inject.Inject
 
-internal class HttpProviderImpl @Inject constructor(
+internal class HttpProviderImpl(
     private val remoteConfigDataSource: RemoteConfigDataSource,
     private val buildConfigFieldsProvider: BuildConfigFieldsProvider,
 ) : HttpProvider {
