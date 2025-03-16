@@ -3,19 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.gamerguide.android.application)
-}
-
-android {
-    namespace = "com.montfel.gamerguide"
-
-    defaultConfig {
-        applicationId = "com.montfel.gamerguide"
-    }
 }
 
 dependencies {

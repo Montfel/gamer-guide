@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.feature.data.datasource.remote.service
+package com.montfel.gamerguide.feature.data.service
 
 import com.montfel.gamerguide.feature.data.model.dto.GameDetailsDto
 

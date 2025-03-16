@@ -9,11 +9,13 @@ import com.montfel.gamerguide.feature.data.datasource.remote.network.GameDetails
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfig
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSource
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSourceImpl
-import com.montfel.gamerguide.feature.data.datasource.remote.service.GameDetailsService
-import com.montfel.gamerguide.feature.data.datasource.remote.service.GameDetailsServiceImpl
 import com.montfel.gamerguide.feature.data.interceptor.HttpProvider
 import com.montfel.gamerguide.feature.data.interceptor.HttpProviderImpl
 import com.montfel.gamerguide.feature.data.repository.GameDetailsRepositoryImpl
+import com.montfel.gamerguide.feature.data.service.GameDetailsService
+import com.montfel.gamerguide.feature.data.service.GameDetailsServiceImpl
+import com.montfel.gamerguide.feature.data.service.GamesService
+import com.montfel.gamerguide.feature.data.service.GamesServiceImpl
 import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
@@ -26,6 +28,9 @@ val dataModule = module {
     singleOf(::GameDetailsRemoteDataSourceImpl) { bind<GameDetailsRemoteDataSource>() }
     singleOf(::HttpProviderImpl) { bind<HttpProvider>() }
     singleOf(::GameDetailsServiceImpl) { bind<GameDetailsService>() }
+    singleOf(::GamesServiceImpl) { bind<GamesService>() }
+
+    singleOf(::RemoteConfigDataSourceImpl) { bind<RemoteConfigDataSource>() }
     single<FirebaseRemoteConfig> {
         val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
@@ -36,5 +41,4 @@ val dataModule = module {
 
         remoteConfig
     }
-    singleOf(::RemoteConfigDataSourceImpl) { bind<RemoteConfigDataSource>() }
 }
