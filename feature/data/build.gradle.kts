@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.ksp)
 
     alias(libs.plugins.gamerguide.android.library)
 }
 
 android {
-    namespace = "com.montfel.gamerguide.feature.data"
+    namespace = "${libs.versions.app.namespace.get()}.feature.data"
 }
 
 dependencies {
@@ -37,4 +36,7 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.client.serialization.json)
+
+    // Paging
+    implementation(libs.paging.common)
 }

@@ -2,8 +2,8 @@ package com.montfel.gamerguide.feature.data.datasource.remote.network
 
 import com.montfel.gamerguide.core.common.ResultType
 import com.montfel.gamerguide.core.common.resultWrapper
-import com.montfel.gamerguide.feature.data.datasource.remote.service.GameDetailsService
-import com.montfel.gamerguide.feature.data.mapper.toDomain
+import com.montfel.gamerguide.feature.data.service.GameDetailsService
+import com.montfel.gamerguide.feature.data.mapper.toGameDetails
 import com.montfel.gamerguide.feature.domain.model.GameDetails
 
 class GameDetailsRemoteDataSourceImpl(
@@ -11,7 +11,7 @@ class GameDetailsRemoteDataSourceImpl(
 ) : GameDetailsRemoteDataSource {
     override suspend fun getGameDetails(gameId: Int): ResultType<GameDetails> {
         return resultWrapper {
-            service.getGameDetails(gameId = gameId).toDomain()
+            service.getGameDetails(gameId = gameId).toGameDetails()
         }
     }
 }

@@ -1,11 +1,9 @@
 plugins {
-    alias(libs.plugins.ksp)
-
     alias(libs.plugins.gamerguide.compose.library)
 }
 
 android {
-    namespace = "com.montfel.gamerguide.feature.ui"
+    namespace = "${libs.versions.app.namespace.get()}.feature.ui"
 }
 
 dependencies {
@@ -28,4 +26,8 @@ dependencies {
     // Koin
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.compose)
+
+    // Paging
+    implementation(libs.paging.common)
+    implementation(libs.paging.compose)
 }

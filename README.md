@@ -72,8 +72,9 @@ The following tools were used in the construction of the project:
 #### Util
 
 -  Gradle: **[Kotlin-DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)** with **[Version Catalog](https://docs.gradle.org/current/userguide/platforms.html)** and **[Convention Plugins](https://docs.gradle.org/current/samples/sample_convention_plugins.html)**
--  IDE:  **[Android Studio](https://developer.android.com/studio)**
--  Icons:  **[Flaticons](https://www.flaticon.com/)**
+-  IDE: **[Android Studio](https://developer.android.com/studio)**
+-  Icons: **[Flaticons](https://www.flaticon.com/)**
+-  API: **[RAWG](https://rawg.io/)**
 
 ---
 

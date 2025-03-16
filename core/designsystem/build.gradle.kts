@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.montfel.gamerguide.core.designsystem"
+    namespace = "${libs.versions.app.namespace.get()}.core.designsystem"
 }
 
 dependencies {

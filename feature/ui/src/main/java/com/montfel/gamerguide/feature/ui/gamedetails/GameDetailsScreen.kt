@@ -14,15 +14,17 @@ import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 internal fun GameDetailsScreen(
     uiState: GameDetailsUiState
 ) {
-    uiState.gameDetails?.let {
+    uiState.gameDetails?.let { gameDetails ->
         Column(modifier = Modifier.safeDrawingPadding()) {
             AsyncImage(
-                model = it.backgroundImage,
+                model = gameDetails.backgroundImage,
                 contentDescription = null,
                 modifier = Modifier.fillMaxWidth()
             )
 
-            Text(text = it.name)
+            gameDetails.name?.let {
+                Text(text = it)
+            }
         }
     }
 }
