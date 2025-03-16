@@ -23,6 +23,7 @@ import coil.compose.AsyncImage
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 import com.montfel.gamerguide.feature.domain.model.Game
 import kotlinx.coroutines.flow.flowOf
+import com.montfel.gamerguide.core.designsystem.R
 
 @Composable
 fun HomeScreen(
@@ -43,7 +44,7 @@ fun HomeScreen(
                 ) {
                     AsyncImage(
                         model = game.backgroundImage,
-                        error = painterResource(com.montfel.gamerguide.core.designsystem.R.drawable.baseline_videogame_asset_24),
+                        error = painterResource(R.drawable.baseline_videogame_asset_24),
                         contentDescription = null,
                         contentScale = ContentScale.FillWidth,
                         modifier = Modifier.fillMaxWidth()
