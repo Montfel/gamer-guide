@@ -65,7 +65,7 @@ The following tools were used in the construction of the project:
 -   **[Material3](https://m3.material.io/)**
 -   **[Coil](https://coil-kt.github.io/coil/)**
 -   **[Firebase](https://firebase.google.com/)**
--   **[Hilt](https://dagger.dev/hilt/)**
+-   **[Koin](https://insert-koin.io/)**
 -   **[Ktor](https://ktor.io/)**
 -   **[Compose Navigation](https://developer.android.com/develop/ui/compose/navigation)**
 

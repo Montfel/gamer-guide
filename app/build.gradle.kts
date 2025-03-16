@@ -4,7 +4,6 @@ plugins {
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.ksp)
-    id(libs.plugins.hilt.get().pluginId)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
 
@@ -24,17 +23,24 @@ dependencies {
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.data)
-    implementation(projects.feature.domain)
     implementation(projects.feature.ui)
 
     implementation(libs.activity)
     implementation(libs.core)
+    implementation(libs.navigation)
+    implementation(libs.splash)
+
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+
+    // Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
+    implementation(libs.koin.viewmodel)
+
+    // Kotlin Serialization
     implementation(libs.kotlin.serialization.core)
-    implementation(libs.navigation)
-    implementation(libs.splash)
 }

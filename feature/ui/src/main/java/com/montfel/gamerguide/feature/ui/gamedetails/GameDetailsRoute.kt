@@ -3,16 +3,16 @@ package com.montfel.gamerguide.feature.ui.gamedetails
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.montfel.gamerguide.core.common.StateOfUi
 import com.montfel.gamerguide.core.designsystem.components.ErrorScreen
 import com.montfel.gamerguide.core.designsystem.components.LoadingScreen
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun GameDetailsRoute(
     id: Int,
-    viewModel: GameDetailsViewModel = hiltViewModel()
+    viewModel: GameDetailsViewModel = koinViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
