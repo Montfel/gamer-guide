@@ -25,7 +25,6 @@ include(":core:designsystem")
 
 include(":feature:data")
 include(":feature:domain")
-include(":feature:ui")
 
 include(":feature:gamedetails:appdemo")
 include(":feature:gamedetails:data:contract")

@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.feature.gamedetails.data.contract)
 }

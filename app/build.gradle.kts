@@ -23,7 +23,8 @@ dependencies {
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.data)
-    implementation(projects.feature.ui)
+    implementation(projects.feature.gamedetails.ui)
+    implementation(projects.feature.home.ui)
 
     implementation(libs.activity)
     implementation(libs.core)

@@ -11,5 +11,5 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.feature.gamedetails.ui)
 }

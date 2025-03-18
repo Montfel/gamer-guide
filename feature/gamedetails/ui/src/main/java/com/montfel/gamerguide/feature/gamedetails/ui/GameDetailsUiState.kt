@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.feature.ui.gamedetails
+package com.montfel.gamerguide.feature.gamedetails.ui
 
 import com.montfel.gamerguide.feature.domain.model.GameDetails
 import com.montfel.gamerguide.core.common.StateOfUi

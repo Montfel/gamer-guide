@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.feature.ui.home
+package com.montfel.gamerguide.feature.home.ui
 
 import androidx.compose.runtime.Composable
 import androidx.paging.compose.collectAsLazyPagingItems
