@@ -13,9 +13,9 @@ import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 import com.montfel.gamerguide.navigation.NavigationComponent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class GamerGuideActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {
 
-    private val viewModel: GamerGuideViewModel by viewModel()
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

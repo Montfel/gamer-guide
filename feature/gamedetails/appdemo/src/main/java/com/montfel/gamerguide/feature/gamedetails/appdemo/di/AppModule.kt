@@ -1,13 +1,10 @@
-package com.montfel.gamerguide.di
+package com.montfel.gamerguide.feature.gamedetails.appdemo.di
 
-import com.montfel.gamerguide.MainViewModel
-import com.montfel.gamerguide.buildconfig.ApplicationBuildConfigFieldsProvider
+import com.montfel.gamerguide.feature.gamedetails.appdemo.buildconfig.ApplicationBuildConfigFieldsProvider
 import com.montfel.gamerguide.core.common.buildconfig.BuildConfigFieldsProvider
 import org.koin.core.module.dsl.singleOf
-import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val appModule = module {
     singleOf<BuildConfigFieldsProvider>(::ApplicationBuildConfigFieldsProvider)
-    viewModelOf(::MainViewModel)
 }

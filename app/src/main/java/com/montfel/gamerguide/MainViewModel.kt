@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSource
 import kotlinx.coroutines.launch
 
-internal class GamerGuideViewModel(
+internal class MainViewModel(
     private val remoteConfigDataSource: RemoteConfigDataSource,
 ) : ViewModel() {
 

@@ -23,6 +23,7 @@ dependencies {
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.data)
+
     implementation(projects.feature.gamedetails.ui)
     implementation(projects.feature.home.ui)
 
@@ -33,7 +34,6 @@ dependencies {
 
     // Firebase
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
 
     // Koin
