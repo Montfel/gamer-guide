@@ -1,12 +1,21 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.gamerguide.android.application)
+}
+
+android {
+    namespace = libs.versions.app.namespace.get()
+
+    defaultConfig {
+        applicationId =  libs.versions.app.namespace.get()
+    }
+
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 dependencies {
