@@ -12,8 +12,6 @@ dependencies {
 
     implementation(projects.feature.gamedetails.domain.contract)
 
-    implementation(projects.feature.domain)
-
     implementation(libs.coil)
 
     // Compose

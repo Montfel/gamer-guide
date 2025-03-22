@@ -25,8 +25,10 @@ dependencies {
     implementation(projects.core.remoteconfig)
 
     implementation(projects.feature.gamedetails.data.implementation)
+    implementation(projects.feature.gamedetails.domain.implementation)
     implementation(projects.feature.gamedetails.ui)
     implementation(projects.feature.home.data.implementation)
+    implementation(projects.feature.home.domain.implementation)
     implementation(projects.feature.home.ui)
 
     implementation(libs.activity)

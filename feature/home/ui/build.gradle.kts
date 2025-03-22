@@ -12,8 +12,6 @@ dependencies {
 
     implementation(projects.feature.home.domain.contract)
 
-    implementation(projects.feature.domain)
-
     implementation(libs.coil)
 
     // Compose

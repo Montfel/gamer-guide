@@ -14,8 +14,6 @@ dependencies {
 
     implementation(projects.feature.gamedetails.data.contract)
 
-    implementation(projects.feature.domain)
-
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)

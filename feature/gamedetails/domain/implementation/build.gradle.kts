@@ -5,4 +5,8 @@ plugins {
 dependencies {
     implementation(projects.feature.gamedetails.data.contract)
     implementation(projects.feature.gamedetails.domain.contract)
+
+    // Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
 }

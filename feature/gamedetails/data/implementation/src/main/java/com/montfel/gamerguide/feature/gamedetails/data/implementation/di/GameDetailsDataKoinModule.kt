@@ -1,6 +1,6 @@
 package com.montfel.gamerguide.feature.gamedetails.data.implementation.di
 
-import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
+import com.montfel.gamerguide.feature.gamedetails.data.contract.repository.GameDetailsRepository
 import com.montfel.gamerguide.feature.gamedetails.data.implementation.datasource.remote.GameDetailsRemoteDataSource
 import com.montfel.gamerguide.feature.gamedetails.data.implementation.datasource.remote.GameDetailsRemoteDataSourceImpl
 import com.montfel.gamerguide.feature.gamedetails.data.implementation.repository.GameDetailsRepositoryImpl

@@ -20,10 +20,9 @@ fun GameDetailsRoute(
         viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id))
     }
 
-    when (val stateOfUi = uiState.stateOfUi) {
+    when (uiState.stateOfUi) {
         is StateOfUi.Error -> {
             ErrorScreen(
-                error = stateOfUi.errorType,
                 onClick = { viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id)) }
             )
         }

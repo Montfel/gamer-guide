@@ -2,9 +2,8 @@ package com.montfel.gamerguide.feature.gamedetails.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.gamerguide.core.common.ResultType
 import com.montfel.gamerguide.core.common.StateOfUi
-import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
+import com.montfel.gamerguide.feature.gamedetails.domain.contract.usecase.GetGameDetailsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class GameDetailsViewModel(
-    private val gameDetailsRepository: GameDetailsRepository,
+    private val getGameDetailsUseCase: GetGameDetailsUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(GameDetailsUiState())
@@ -28,22 +27,20 @@ class GameDetailsViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             _uiState.update { it.copy(stateOfUi = StateOfUi.Loading) }
 
-            when (val result = gameDetailsRepository.getGameDetails(gameId = id)) {
-                is ResultType.Success -> {
+            getGameDetailsUseCase(gameId = id)
+                .onSuccess { gameDetails ->
                     _uiState.update {
                         it.copy(
-                            gameDetails = result.data,
+                            gameDetails = gameDetails,
                             stateOfUi = StateOfUi.Success
                         )
                     }
                 }
-
-                is ResultType.Failure -> {
+                .onFailure {
                     _uiState.update {
-                        it.copy(stateOfUi = StateOfUi.Error(errorType = result.errorType))
+                        it.copy(stateOfUi = StateOfUi.Error)
                     }
                 }
-            }
         }
     }
 }

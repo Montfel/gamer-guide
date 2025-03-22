@@ -21,9 +21,9 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
-import com.montfel.gamerguide.feature.domain.model.Game
 import kotlinx.coroutines.flow.flowOf
 import com.montfel.gamerguide.core.designsystem.R
+import com.montfel.gamerguide.feature.home.domain.contract.model.Game
 
 @Composable
 fun HomeScreen(

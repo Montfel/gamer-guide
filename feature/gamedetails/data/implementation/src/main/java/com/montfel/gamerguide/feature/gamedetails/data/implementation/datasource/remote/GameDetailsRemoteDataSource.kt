@@ -1,8 +1,7 @@
 package com.montfel.gamerguide.feature.gamedetails.data.implementation.datasource.remote
 
-import com.montfel.gamerguide.core.common.ResultType
-import com.montfel.gamerguide.feature.domain.model.GameDetails
+import com.montfel.gamerguide.feature.gamedetails.data.contract.model.GameDetailsData
 
 interface GameDetailsRemoteDataSource {
-    suspend fun getGameDetails(gameId: Int): ResultType<GameDetails>
+    suspend fun getGameDetails(gameId: Int): Result<GameDetailsData>
 }

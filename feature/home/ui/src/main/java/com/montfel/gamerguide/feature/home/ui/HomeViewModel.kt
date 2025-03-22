@@ -4,15 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.montfel.gamerguide.feature.domain.model.Game
-import com.montfel.gamerguide.feature.domain.repository.HomeRepository
+import com.montfel.gamerguide.feature.home.domain.contract.model.Game
+import com.montfel.gamerguide.feature.home.domain.contract.usecase.GetGamesUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.emptyFlow
 
 class HomeViewModel(
-    private val homeRepository: HomeRepository,
+    private val getGamesUseCase: GetGamesUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
@@ -25,6 +25,6 @@ class HomeViewModel(
     }
 
     private fun getGames() {
-        gamesPagingDataFlow = homeRepository.getGames().cachedIn(viewModelScope)
+        gamesPagingDataFlow = getGamesUseCase().cachedIn(viewModelScope)
     }
 }

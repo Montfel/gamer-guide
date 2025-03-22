@@ -1,8 +1,7 @@
 package com.montfel.gamerguide.feature.gamedetails.data.implementation.repository
 
-import com.montfel.gamerguide.core.common.ResultType
-import com.montfel.gamerguide.feature.domain.model.GameDetails
-import com.montfel.gamerguide.feature.domain.repository.GameDetailsRepository
+import com.montfel.gamerguide.feature.gamedetails.data.contract.model.GameDetailsData
+import com.montfel.gamerguide.feature.gamedetails.data.contract.repository.GameDetailsRepository
 import com.montfel.gamerguide.feature.gamedetails.data.implementation.datasource.remote.GameDetailsRemoteDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -10,7 +9,7 @@ import kotlinx.coroutines.withContext
 class GameDetailsRepositoryImpl(
     private val gameDetailsRemoteDataSource: GameDetailsRemoteDataSource,
 ) : GameDetailsRepository {
-    override suspend fun getGameDetails(gameId: Int): ResultType<GameDetails> {
+    override suspend fun getGameDetails(gameId: Int): Result<GameDetailsData> {
         return withContext(Dispatchers.IO) {
             gameDetailsRemoteDataSource.getGameDetails(gameId = gameId)
         }
