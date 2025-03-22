@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montfel.gamerguide.feature.data.datasource.remote.remoteConfig.RemoteConfigDataSource
+import com.montfel.gamerguide.core.remoteconfig.remoteconfig.RemoteConfigDataSource
 import kotlinx.coroutines.launch
 
 internal class MainViewModel(

@@ -22,8 +22,9 @@ include(":app")
 
 include(":core:common")
 include(":core:designsystem")
+include(":core:network")
+include(":core:remoteconfig")
 
-include(":feature:data")
 include(":feature:domain")
 
 include(":feature:gamedetails:appdemo")

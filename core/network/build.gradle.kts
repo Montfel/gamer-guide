@@ -5,16 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "${libs.versions.app.namespace.get()}.feature.home.data.implementation"
+    namespace = "${libs.versions.app.namespace.get()}.core.network"
 }
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.core.network)
-
-    implementation(projects.feature.home.data.contract)
-
-    implementation(projects.feature.domain)
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -39,7 +34,4 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.client.serialization.json)
-
-    // Paging
-    implementation(libs.paging.common)
 }

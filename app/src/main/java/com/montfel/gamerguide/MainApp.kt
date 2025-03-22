@@ -1,9 +1,12 @@
 package com.montfel.gamerguide
 
 import android.app.Application
+import com.montfel.gamerguide.core.network.di.networkKoinModule
+import com.montfel.gamerguide.core.remoteconfig.di.remoteConfigKoinModule
 import com.montfel.gamerguide.di.appModule
-import com.montfel.gamerguide.feature.data.di.dataModule
+import com.montfel.gamerguide.feature.gamedetails.data.implementation.di.gameDetailsDataKoinModule
 import com.montfel.gamerguide.feature.gamedetails.ui.di.gameDetailsUiKoinModule
+import com.montfel.gamerguide.feature.home.data.implementation.di.homeDataKoinModule
 import com.montfel.gamerguide.feature.home.ui.di.homeUiKoinModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,7 +20,15 @@ internal class MainApp : Application() {
             androidLogger()
             androidContext(this@MainApp)
 
-            modules(appModule, dataModule, gameDetailsUiKoinModule, homeUiKoinModule)
+            modules(
+                appModule,
+                gameDetailsDataKoinModule,
+                gameDetailsUiKoinModule,
+                homeDataKoinModule,
+                homeUiKoinModule,
+                networkKoinModule,
+                remoteConfigKoinModule,
+            )
         }
     }
 }

@@ -18,8 +18,6 @@ dependencies {
 
     implementation(projects.feature.gamedetails.ui)
 
-    implementation(projects.feature.data)
-
     implementation(libs.activity)
 
     // Firebase

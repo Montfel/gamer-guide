@@ -21,10 +21,12 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
+    implementation(projects.core.network)
+    implementation(projects.core.remoteconfig)
 
-    implementation(projects.feature.data)
-
+    implementation(projects.feature.gamedetails.data.implementation)
     implementation(projects.feature.gamedetails.ui)
+    implementation(projects.feature.home.data.implementation)
     implementation(projects.feature.home.ui)
 
     implementation(libs.activity)
