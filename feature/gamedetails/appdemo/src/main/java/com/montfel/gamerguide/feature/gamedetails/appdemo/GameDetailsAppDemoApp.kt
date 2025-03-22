@@ -1,8 +1,10 @@
 package com.montfel.gamerguide.feature.gamedetails.appdemo
 
 import android.app.Application
-import com.montfel.gamerguide.feature.data.di.dataModule
-import com.montfel.gamerguide.feature.gamedetails.appdemo.di.appModule
+import com.montfel.gamerguide.core.network.di.networkKoinModule
+import com.montfel.gamerguide.feature.gamedetails.appdemo.di.gameDetailsAppDemoKoinModule
+import com.montfel.gamerguide.feature.gamedetails.data.implementation.di.gameDetailsDataKoinModule
+import com.montfel.gamerguide.feature.gamedetails.domain.implementation.di.gameDetailsDomainKoinModule
 import com.montfel.gamerguide.feature.gamedetails.ui.di.gameDetailsUiKoinModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -16,7 +18,13 @@ internal class GameDetailsAppDemoApp : Application() {
             androidLogger()
             androidContext(this@GameDetailsAppDemoApp)
 
-            modules(appModule, dataModule, gameDetailsUiKoinModule)
+            modules(
+                gameDetailsAppDemoKoinModule,
+                gameDetailsDataKoinModule,
+                gameDetailsDomainKoinModule,
+                gameDetailsUiKoinModule,
+                networkKoinModule
+            )
         }
     }
 }

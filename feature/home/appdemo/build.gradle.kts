@@ -1,7 +1,4 @@
 plugins {
-    id(libs.plugins.google.services.get().pluginId)
-    id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
-
     alias(libs.plugins.gamerguide.android.application)
 }
 
@@ -16,13 +13,13 @@ android {
 dependencies {
     implementation(projects.core.common)
 
+    implementation(projects.feature.home.data.implementation)
+    implementation(projects.feature.home.domain.implementation)
     implementation(projects.feature.home.ui)
 
-    implementation(libs.activity)
+    implementation(projects.core.network)
 
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics)
+    implementation(libs.activity)
 
     // Koin
     implementation(platform(libs.koin.bom))

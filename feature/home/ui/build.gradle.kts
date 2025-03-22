@@ -20,12 +20,10 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.compose.ui.tooling)
 
-    // Lifecycle
-    implementation(libs.lifecycle.compose)
-
     // Koin
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.compose)
+    implementation(libs.koin.viewmodel)
 
     // Paging
     implementation(libs.paging.common)

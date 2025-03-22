@@ -1,10 +1,10 @@
-package com.montfel.gamerguide.feature.gamedetails.appdemo.di
+package com.montfel.gamerguide.feature.home.appdemo.di
 
-import com.montfel.gamerguide.feature.gamedetails.appdemo.buildconfig.ApplicationBuildConfigFieldsProvider
+import com.montfel.gamerguide.feature.home.appdemo.buildconfig.ApplicationBuildConfigFieldsProvider
 import com.montfel.gamerguide.core.common.buildconfig.BuildConfigFieldsProvider
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
-val appModule = module {
+val homeAppDemoKoinModule = module {
     singleOf<BuildConfigFieldsProvider>(::ApplicationBuildConfigFieldsProvider)
 }

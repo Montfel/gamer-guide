@@ -17,7 +17,6 @@ dependencies {
     // Compose
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
-    implementation(libs.compose.foundation)
     implementation(libs.compose.ui.tooling)
 
     // Lifecycle
@@ -26,4 +25,5 @@ dependencies {
     // Koin
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.compose)
+    implementation(libs.koin.viewmodel)
 }
