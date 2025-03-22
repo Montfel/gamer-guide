@@ -19,10 +19,7 @@ internal fun Project.configureAndroidApplication(
         val secretsProperties = Properties()
         secretsProperties.load(secretsFile.inputStream())
 
-        namespace = libs.versions.app.namespace.get()
-
         defaultConfig {
-            applicationId = libs.versions.app.namespace.get()
             targetSdk = libs.versions.sdk.target.get().toInt()
             versionCode = libs.versions.versionCode.get().toInt()
             versionName = libs.versions.versionName.get()
@@ -71,10 +68,6 @@ internal fun Project.configureAndroidApplication(
             }
         }
 
-        androidResources {
-            generateLocaleConfig = true
-        }
-
         configureAndroid(applicationExtension)
     }
 
@@ -107,6 +100,8 @@ internal fun Project.applyAndroidLibraryPlugins() {
 }
 
 internal fun Project.applyAndroidApplicationPlugins() {
+    apply(plugin = libs.plugins.android.application.get().pluginId)
+    apply(plugin = libs.plugins.kotlin.android.get().pluginId)
     apply(plugin = libs.plugins.dependency.analysis.get().pluginId)
 }
 

@@ -1,20 +1,35 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.gamerguide.android.application)
+}
+
+android {
+    namespace = libs.versions.app.namespace.get()
+
+    defaultConfig {
+        applicationId =  libs.versions.app.namespace.get()
+    }
+
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
+    implementation(projects.core.network)
+    implementation(projects.core.remoteconfig)
 
-    implementation(projects.feature.data)
-    implementation(projects.feature.ui)
+    implementation(projects.feature.gamedetails.data.implementation)
+    implementation(projects.feature.gamedetails.domain.implementation)
+    implementation(projects.feature.gamedetails.ui)
+    implementation(projects.feature.home.data.implementation)
+    implementation(projects.feature.home.domain.implementation)
+    implementation(projects.feature.home.ui)
 
     implementation(libs.activity)
     implementation(libs.core)
@@ -23,7 +38,6 @@ dependencies {
 
     // Firebase
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
 
     // Koin
