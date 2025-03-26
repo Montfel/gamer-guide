@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.map
 class GetGamesUseCaseImpl(
     private val homeRepository: HomeRepository
 ) : GetGamesUseCase {
-    override operator fun invoke(): Flow<PagingData<Game>> {
-        return homeRepository.getGames().map { it.map(GameData::toGame) }
+    override operator fun invoke(query: String): Flow<PagingData<Game>> {
+        return homeRepository.getGames(query = query).map { it.map(GameData::toGame) }
     }
 }

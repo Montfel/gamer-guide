@@ -10,7 +10,7 @@ internal class HomeServiceImpl(
     private val httpProvider: HttpProvider,
     private val buildConfigFieldsProvider: BuildConfigFieldsProvider,
 ) : HomeService {
-    override suspend fun getGames(page: Int, pageSize: Int): GamesApi {
+    override suspend fun getGames(query: String, page: Int, pageSize: Int): GamesApi {
         val buildConfigFields = buildConfigFieldsProvider()
         val baseUrl = buildConfigFields.baseUrl
         val url = baseUrl.plus(GAMES_PATH)
@@ -18,9 +18,9 @@ internal class HomeServiceImpl(
 
         val response = client.get(url) {
             url {
+                parameters.append(SEARCH, query)
                 parameters.append(PAGE, page.toString())
                 parameters.append(PAGE_SIZE, pageSize.toString())
-                parameters.append(ORDERING, "released")
             }
         }
 
@@ -29,8 +29,8 @@ internal class HomeServiceImpl(
 
     private companion object {
         const val GAMES_PATH = "games"
+        const val SEARCH = "search"
         const val PAGE = "page"
         const val PAGE_SIZE = "page_size"
-        const val ORDERING = "ordering"
     }
 }
