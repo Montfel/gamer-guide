@@ -5,5 +5,5 @@ import com.montfel.gamerguide.feature.home.data.contract.model.GameData
 import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
-    fun getGames(): Flow<PagingData<GameData>>
+    fun getGames(query: String): Flow<PagingData<GameData>>
 }

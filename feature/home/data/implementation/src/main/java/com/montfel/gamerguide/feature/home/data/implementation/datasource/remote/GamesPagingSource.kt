@@ -8,6 +8,7 @@ import com.montfel.gamerguide.feature.home.data.implementation.model.GameApi
 import com.montfel.gamerguide.feature.home.data.implementation.service.HomeService
 
 class GamesPagingSource(
+    private val query: String,
     private val service: HomeService,
 ) : PagingSource<Int, GameData>() {
     override fun getRefreshKey(state: PagingState<Int, GameData>): Int? {
@@ -21,6 +22,7 @@ class GamesPagingSource(
         return runCatching {
             val page = params.key ?: 1
             val response = service.getGames(
+                query = query,
                 page = page,
                 pageSize = ITEMS_PER_PAGE
             )

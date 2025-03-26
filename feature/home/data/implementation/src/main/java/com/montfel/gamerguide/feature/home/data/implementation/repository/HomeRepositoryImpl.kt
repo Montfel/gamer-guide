@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 class HomeRepositoryImpl(
     private val remoteDataSource: HomeRemoteDataSource
 ) : HomeRepository {
-    override fun getGames(): Flow<PagingData<GameData>> {
-        return remoteDataSource.getGames()
+    override fun getGames(query: String): Flow<PagingData<GameData>> {
+        return remoteDataSource.getGames(query = query)
     }
 }

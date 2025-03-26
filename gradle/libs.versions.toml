@@ -8,18 +8,19 @@ versionCode = "1"
 versionName = "1.0.0"
 
 activity = "1.10.1"
-androidGradlePlugin = "8.9.0"
+androidGradlePlugin = "8.9.1"
 coil = "2.7.0"
 compose = "2025.03.00"
 core = "1.15.0"
 dependencyAnalysis = "2.12.0"
 detekt = "1.23.8"
-firebase = "33.10.0"
+firebase = "33.11.0"
 firebaseCrashlyticsGradle = "3.0.3"
 google-services = "4.4.2"
 koin = "4.0.2"
 kotlin = "2.1.10"
 kotlinSerialization = "1.8.0"
+kotlinCoroutines = "1.10.1"
 kover = "0.9.1"
 ktor = "3.1.1"
 ksp = "2.1.10-1.0.31"
@@ -70,6 +71,7 @@ koin-android = { module = "io.insert-koin:koin-android" }
 koin-compose = { module = "io.insert-koin:koin-androidx-compose" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-viewmodel = { module = "io.insert-koin:koin-core-viewmodel" }
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
 kotlin-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinSerialization" }
 kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }

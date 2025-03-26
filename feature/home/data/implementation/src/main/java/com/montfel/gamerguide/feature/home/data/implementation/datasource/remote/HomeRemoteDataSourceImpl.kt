@@ -11,11 +11,12 @@ import kotlinx.coroutines.flow.Flow
 class HomeRemoteDataSourceImpl(
     private val homeService: HomeService,
 ) : HomeRemoteDataSource {
-    override fun getGames(): Flow<PagingData<GameData>> {
+    override fun getGames(query: String): Flow<PagingData<GameData>> {
         return Pager(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),
             pagingSourceFactory = {
                 GamesPagingSource(
+                    query = query,
                     service = homeService
                 )
             }
