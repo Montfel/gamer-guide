@@ -1,7 +1,6 @@
 plugins {
     id(libs.plugins.google.services.get().pluginId)
     id(libs.plugins.firebase.crashlytics.gradle.get().pluginId)
-    alias(libs.plugins.kotlin.serialization)
 
     alias(libs.plugins.gamerguide.android.application)
 }
@@ -21,6 +20,7 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
+    implementation(projects.core.navigation)
     implementation(projects.core.network)
     implementation(projects.core.remoteconfig)
 
@@ -33,7 +33,6 @@ dependencies {
 
     implementation(libs.activity)
     implementation(libs.core)
-    implementation(libs.navigation)
     implementation(libs.splash)
 
     // Firebase
@@ -46,6 +45,5 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.viewmodel)
 
-    // Kotlin Serialization
-    implementation(libs.kotlin.serialization.core)
+    implementation(libs.kotlin.coroutines.core)
 }

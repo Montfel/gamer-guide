@@ -22,6 +22,7 @@ include(":app")
 
 include(":core:common")
 include(":core:designsystem")
+include(":core:navigation")
 include(":core:network")
 include(":core:remoteconfig")
 

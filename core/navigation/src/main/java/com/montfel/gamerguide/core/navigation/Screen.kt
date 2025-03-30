@@ -1,4 +1,4 @@
-package com.montfel.gamerguide.navigation
+package com.montfel.gamerguide.core.navigation
 
 import kotlinx.serialization.Serializable
 
@@ -12,4 +12,7 @@ sealed interface Screen {
     data class GameDetails(
         val id: Int
     ) : Screen
+
+    @Serializable
+    data object Lists : Screen
 }
