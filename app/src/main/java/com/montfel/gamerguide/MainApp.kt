@@ -13,6 +13,7 @@ import com.montfel.gamerguide.feature.home.domain.implementation.di.homeDomainMo
 import com.montfel.gamerguide.feature.home.ui.di.homeUiModule
 import com.montfel.gamerguide.feature.lists.data.implementation.di.listsDataModule
 import com.montfel.gamerguide.feature.lists.domain.implementation.di.listsDomainModule
+import com.montfel.gamerguide.feature.lists.ui.di.listsUiModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -36,6 +37,7 @@ internal class MainApp : Application() {
                 homeUiModule,
                 listsDataModule,
                 listsDomainModule,
+                listsUiModule,
                 networkModule,
                 remoteConfigModule,
             )

@@ -10,3 +10,11 @@ fun FavoritedGame.toFavoritedGameData(): FavoritedGameData {
         backgroundImage = backgroundImage
     )
 }
+
+fun FavoritedGameData.toFavoritedGame(): FavoritedGame {
+    return FavoritedGame(
+        id = id,
+        name = name,
+        backgroundImage = backgroundImage
+    )
+}

@@ -33,6 +33,7 @@ dependencies {
     implementation(projects.feature.home.ui)
     implementation(projects.feature.lists.data.implementation)
     implementation(projects.feature.lists.domain.implementation)
+    implementation(projects.feature.lists.ui)
 
     implementation(libs.activity)
     implementation(libs.core)

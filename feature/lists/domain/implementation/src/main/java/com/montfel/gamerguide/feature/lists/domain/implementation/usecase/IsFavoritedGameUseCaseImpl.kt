@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class IsFavoritedGameUseCaseImpl(
     private val repository: ListsRepository
 ) : IsFavoritedGameUseCase {
-    override suspend fun invoke(id: Int): Flow<Boolean> {
+    override fun invoke(id: Int): Flow<Boolean> {
         return repository.isFavoritedGame(id)
     }
 }

@@ -10,6 +10,8 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
 
+    implementation(projects.feature.lists.domain.contract)
+
     implementation(libs.coil)
 
     // Compose

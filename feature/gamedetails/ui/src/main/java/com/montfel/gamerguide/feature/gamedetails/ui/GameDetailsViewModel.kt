@@ -12,6 +12,7 @@ import com.montfel.gamerguide.feature.lists.domain.contract.usecase.UnfavoriteGa
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -57,7 +58,9 @@ class GameDetailsViewModel(
 
     private fun isFavoritedGame(id: Int) {
         viewModelScope.launch {
-            isFavoritedGameUseCase(id = id).collect { isFavorited ->
+            isFavoritedGameUseCase(id = id)
+                .distinctUntilChanged()
+                .collect { isFavorited ->
                 _uiState.update {
                     it.copy(isFavoritedGame = isFavorited)
                 }
