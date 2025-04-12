@@ -13,6 +13,7 @@ dependencies {
 
     implementation(projects.feature.gamedetails.ui)
     implementation(projects.feature.home.ui)
+    implementation(projects.feature.lists.ui)
 
     implementation(libs.navigation)
 

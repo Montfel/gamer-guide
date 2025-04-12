@@ -19,6 +19,7 @@ android {
 
 dependencies {
     implementation(projects.core.common)
+    implementation(projects.core.database)
     implementation(projects.core.designsystem)
     implementation(projects.core.navigation)
     implementation(projects.core.network)
@@ -30,6 +31,8 @@ dependencies {
     implementation(projects.feature.home.data.implementation)
     implementation(projects.feature.home.domain.implementation)
     implementation(projects.feature.home.ui)
+    implementation(projects.feature.lists.data.implementation)
+    implementation(projects.feature.lists.domain.implementation)
 
     implementation(libs.activity)
     implementation(libs.core)

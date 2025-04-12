@@ -11,6 +11,7 @@ dependencies {
     implementation(projects.core.designsystem)
 
     implementation(projects.feature.gamedetails.domain.contract)
+    implementation(projects.feature.lists.domain.contract)
 
     implementation(libs.coil)
 

@@ -17,6 +17,7 @@ import com.montfel.gamerguide.core.navigation.component.NavigationBarCustom
 import com.montfel.gamerguide.core.navigation.component.NavigationItem
 import com.montfel.gamerguide.feature.gamedetails.ui.GameDetailsRoute
 import com.montfel.gamerguide.feature.home.ui.HomeRoute
+import com.montfel.gamerguide.feature.lists.ui.ListsScreen
 
 @Composable
 fun NavigationComponent() {
@@ -77,9 +78,7 @@ fun NavigationComponent() {
             }
 
             composable<Screen.Lists> {
-                GameDetailsRoute(
-                    id = 1,
-                )
+                ListsScreen()
             }
         }
     }
