@@ -13,6 +13,7 @@ val databaseModule = module {
             name = Constants.GAMER_GUIDE_DATABASE
         ).build()
     }
+
     single {
         get<GamerGuideDatabase>().favoritedGamesDao()
     }
