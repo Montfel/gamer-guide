@@ -20,7 +20,6 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
 import com.montfel.gamerguide.core.designsystem.R
 import com.montfel.gamerguide.core.designsystem.components.TextFieldCustom
@@ -51,10 +50,7 @@ fun HomeScreen(
                 )
             }
 
-            items(
-                count = gamesLazyPagingItems.itemCount,
-                key = gamesLazyPagingItems.itemKey(Game::id)
-            ) { index ->
+            items(count = gamesLazyPagingItems.itemCount) { index ->
                 val gameItem = gamesLazyPagingItems[index]
                 gameItem?.let { game ->
                     Column(

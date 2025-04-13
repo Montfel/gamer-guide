@@ -10,7 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
-import com.montfel.gamerguide.navigation.NavigationComponent
+import com.montfel.gamerguide.core.navigation.NavigationComponent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {

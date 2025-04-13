@@ -24,7 +24,7 @@ class GamesPagingSource(
             val response = service.getGames(
                 query = query,
                 page = page,
-                pageSize = ITEMS_PER_PAGE
+                pageSize = params.loadSize
             )
             val games = response.results.map(GameApi::toGameData)
 
@@ -36,9 +36,5 @@ class GamesPagingSource(
         }.getOrElse {
             LoadResult.Error(it)
         }
-    }
-
-    companion object {
-        const val ITEMS_PER_PAGE = 20
     }
 }

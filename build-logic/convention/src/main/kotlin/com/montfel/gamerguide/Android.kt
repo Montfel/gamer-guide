@@ -83,7 +83,7 @@ internal fun Project.configureAndroidLibrary(
                 isMinifyEnabled = false
             }
             release {
-                isMinifyEnabled = true
+                isMinifyEnabled = false
             }
         }
 

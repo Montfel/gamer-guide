@@ -18,6 +18,7 @@ fun GameDetailsRoute(
 
     LaunchedEffect(key1 = Unit) {
         viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id))
+        viewModel.onEvent(GameDetailsUiEvent.IsFavoritedGame(id))
     }
 
     when (uiState.stateOfUi) {
@@ -32,7 +33,10 @@ fun GameDetailsRoute(
         }
 
         is StateOfUi.Success -> {
-            GameDetailsScreen(uiState = uiState)
+            GameDetailsScreen(
+                uiState = uiState,
+                onEvent = viewModel::onEvent
+            )
         }
     }
 }

@@ -21,7 +21,9 @@ rootProject.name = "GamerGuide"
 include(":app")
 
 include(":core:common")
+include(":core:database")
 include(":core:designsystem")
+include(":core:navigation")
 include(":core:network")
 include(":core:remoteconfig")
 
@@ -38,3 +40,10 @@ include(":feature:home:data:implementation")
 include(":feature:home:domain:contract")
 include(":feature:home:domain:implementation")
 include(":feature:home:ui")
+
+include(":feature:lists:appdemo")
+include(":feature:lists:data:contract")
+include(":feature:lists:data:implementation")
+include(":feature:lists:domain:contract")
+include(":feature:lists:domain:implementation")
+include(":feature:lists:ui")

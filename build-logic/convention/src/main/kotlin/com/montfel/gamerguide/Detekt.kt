@@ -10,7 +10,7 @@ import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.withType
 
 internal fun Project.configureDetekt() {
-    pluginManager.apply(libs.gradle.plugin.detekt.get().group)
+    pluginManager.apply(libs.gradle.plugin.detekt.get().group.toString())
     val extension = extensions.getByType<DetektExtension>()
 
     with(extension) {

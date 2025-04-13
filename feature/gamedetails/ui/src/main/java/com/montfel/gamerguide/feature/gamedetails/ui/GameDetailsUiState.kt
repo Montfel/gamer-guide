@@ -5,5 +5,6 @@ import com.montfel.gamerguide.core.common.StateOfUi
 
 data class GameDetailsUiState(
     val gameDetails: GameDetails? = null,
+    val isFavoritedGame: Boolean = false,
     val stateOfUi: StateOfUi = StateOfUi.Loading,
 )
