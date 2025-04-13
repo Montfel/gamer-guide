@@ -13,7 +13,7 @@ dependencies {
     implementation(projects.feature.gamedetails.domain.contract)
     implementation(projects.feature.lists.domain.contract)
 
-    implementation(libs.coil)
+    implementation(libs.bundles.coil)
 
     // Compose
     implementation(platform(libs.compose.bom))

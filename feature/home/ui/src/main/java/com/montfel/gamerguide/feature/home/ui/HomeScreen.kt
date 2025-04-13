@@ -20,7 +20,7 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import coil.compose.AsyncImage
+import coil3.compose.AsyncImage
 import com.montfel.gamerguide.core.designsystem.R
 import com.montfel.gamerguide.core.designsystem.components.TextFieldCustom
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme

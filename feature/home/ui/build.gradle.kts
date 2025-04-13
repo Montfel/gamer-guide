@@ -12,7 +12,7 @@ dependencies {
 
     implementation(projects.feature.home.domain.contract)
 
-    implementation(libs.coil)
+    implementation(libs.bundles.coil)
 
     // Compose
     implementation(platform(libs.compose.bom))
