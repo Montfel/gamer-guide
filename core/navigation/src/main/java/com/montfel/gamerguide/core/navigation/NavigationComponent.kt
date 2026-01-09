@@ -1,18 +1,17 @@
 package com.montfel.gamerguide.core.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.montfel.gamerguide.core.designsystem.resources.drawableDesignSystem
 import com.montfel.gamerguide.core.navigation.component.NavigationBarCustom
 import com.montfel.gamerguide.core.navigation.component.NavigationItem
 import com.montfel.gamerguide.feature.gamedetails.ui.GameDetailsRoute
@@ -24,11 +23,11 @@ fun NavigationComponent() {
     val navigationBarItems =
         listOf(
             NavigationItem(
-                icon = Icons.Default.Home,
+                icon = painterResource(drawableDesignSystem.ic_home),
                 screen = Screen.Home
             ),
             NavigationItem(
-                icon = Icons.AutoMirrored.Filled.List,
+                icon = painterResource(drawableDesignSystem.ic_list),
                 screen = Screen.Lists
             ),
         )

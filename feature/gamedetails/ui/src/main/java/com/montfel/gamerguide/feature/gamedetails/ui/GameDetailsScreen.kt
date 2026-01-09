@@ -4,17 +4,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.twotone.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
+import com.montfel.gamerguide.core.designsystem.resources.drawableDesignSystem
 import com.montfel.gamerguide.core.designsystem.theme.GamerGuideTheme
 
 @Composable
@@ -47,7 +46,7 @@ internal fun GameDetailsScreen(
                         onClick = { onEvent(GameDetailsUiEvent.UnfavoriteGame(gameDetails)) }
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Star,
+                            painter = painterResource(drawableDesignSystem.ic_star_filled),
                             contentDescription = null
                         )
                     }
@@ -56,7 +55,7 @@ internal fun GameDetailsScreen(
                         onClick = { onEvent(GameDetailsUiEvent.FavoriteGame(gameDetails)) }
                     ) {
                         Icon(
-                            imageVector = Icons.TwoTone.Star,
+                            painter = painterResource(drawableDesignSystem.ic_star),
                             contentDescription = null
                         )
                     }
