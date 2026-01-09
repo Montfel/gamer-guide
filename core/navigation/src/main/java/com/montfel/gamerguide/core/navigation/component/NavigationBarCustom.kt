@@ -8,7 +8,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
 import com.montfel.gamerguide.core.navigation.Screen
 
@@ -34,7 +34,7 @@ fun NavigationBarCustom(
                 onClick = { onClick(navigationItem) },
                 icon = {
                     Icon(
-                        imageVector = navigationItem.icon,
+                        painter = navigationItem.icon,
                         contentDescription = null
                     )
                 }
@@ -44,6 +44,6 @@ fun NavigationBarCustom(
 }
 
 data class NavigationItem(
-    val icon: ImageVector,
+    val icon: Painter,
     val screen: Screen
 )
