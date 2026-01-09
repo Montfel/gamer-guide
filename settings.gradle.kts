@@ -18,7 +18,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "GamerGuide"
 
-include(":app")
+include(":androidApp")
 
 include(":core:common")
 include(":core:database")
@@ -47,3 +47,4 @@ include(":feature:lists:data:implementation")
 include(":feature:lists:domain:contract")
 include(":feature:lists:domain:implementation")
 include(":feature:lists:ui")
+include(":shared")

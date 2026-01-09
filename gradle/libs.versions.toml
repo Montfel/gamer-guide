@@ -30,6 +30,11 @@ okhttp = "5.3.2"
 paging = "3.3.6"
 room = "2.8.4"
 splash = "1.2.0"
+kotlinStdlib = "2.1.20"
+kotlinTest = "2.1.20"
+runner = "1.5.2"
+coreVersion = "1.5.0"
+junit = "1.1.5"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -50,6 +55,8 @@ gamerguide-android-application = { id = "gamerguide.android.application", versio
 gamerguide-android-library = { id = "gamerguide.android.library", version = "unspecified" }
 gamerguide-compose-library = { id = "gamerguide.compose.library", version = "unspecified" }
 gamerguide-kotlin-library = { id = "gamerguide.kotlin.library", version = "unspecified" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
 
 [libraries]
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
@@ -92,6 +99,11 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 splash = { module = "androidx.core:core-splashscreen", version.ref = "splash" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
+runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+test-core = { group = "androidx.test", name = "core", version.ref = "coreVersion" }
+junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 
 [bundles]
 coil = ["coil-compose", "coil-network"]
