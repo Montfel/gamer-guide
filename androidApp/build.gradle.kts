@@ -24,6 +24,7 @@ dependencies {
     implementation(projects.core.navigation)
     implementation(projects.core.network)
     implementation(projects.core.remoteconfig)
+    implementation(projects.shared)
 
     implementation(projects.feature.gamedetails.data.implementation)
     implementation(projects.feature.gamedetails.domain.implementation)
