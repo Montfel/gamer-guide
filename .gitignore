@@ -87,6 +87,7 @@ lint/tmp/
 # lint/reports/
 .gradle
 /local.properties
+/.idea
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -112,3 +113,4 @@ kotlinc.xml
 
 /.idea/appInsightsSettings.xml
 .kotlin/
+/.idea/
