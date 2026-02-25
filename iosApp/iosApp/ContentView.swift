@@ -1,24 +1,21 @@
-//
-//  ContentView.swift
-//  iosApp
-//
-//  Created by Luís Felipe on 18/01/26.
-//
-
+import UIKit
 import SwiftUI
-import sharedKit
+import ComposeApp
+
+struct ComposeView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        MainViewControllerKt.MainViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+}
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-        }
-        .padding()
+        ComposeView()
+            .ignoresSafeArea()
     }
 }
 
-#Preview {
-    ContentView()
-}
+
+

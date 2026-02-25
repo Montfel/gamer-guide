@@ -1,31 +1,38 @@
 plugins {
-    alias(libs.plugins.gamerguide.compose.library)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.multiplatform)
+
+    alias(libs.plugins.gamerguide.kotlin.multiplatform)
+}
+
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.compose)
+            implementation(libs.koin.core)
+            implementation(libs.bundles.coil)
+            implementation(libs.paging.common)
+            implementation(libs.paging.compose)
+
+            implementation(projects.feature.home.domain)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
 }
 
 android {
-    namespace = "${libs.versions.app.namespace.get()}.feature.home.ui"
-}
-
-dependencies {
-    implementation(projects.core.common)
-    implementation(projects.core.designsystem)
-
-    implementation(projects.feature.home.domain.contract)
-
-    implementation(libs.bundles.coil)
-
-    // Compose
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.material3)
-    implementation(libs.compose.foundation)
-    implementation(libs.compose.ui.tooling)
-
-    // Koin
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.compose)
-    implementation(libs.koin.viewmodel)
-
-    // Paging
-    implementation(libs.paging.common)
-    implementation(libs.paging.compose)
+    namespace = "com.montfel.gamerguide.feature.home.ui"
+    compileSdk = libs.versions.android.sdk.compile.get().toInt()
 }
