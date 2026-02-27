@@ -27,7 +27,6 @@ fun initKoin(config: KoinAppDeclaration? = null) {
 //            listsDomainModule,
 //            listsUiModule,
             networkModule,
-//            remoteConfigModule,
         )
     }
 }

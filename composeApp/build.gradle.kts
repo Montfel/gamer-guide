@@ -33,6 +33,7 @@ kotlin {
             implementation(libs.activity)
             implementation(libs.koin.android)
             implementation(libs.ktor.client.android)
+            implementation(libs.splash)
             implementation(project.dependencies.platform(libs.firebase.bom))
             implementation(libs.firebase.analytics) //fixme
             implementation(libs.firebase.crashlytics)

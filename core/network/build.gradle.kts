@@ -14,8 +14,6 @@ kotlin {
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
             implementation(libs.bundles.ktor)
-
-            implementation(projects.feature.gamedetails.domain)
         }
 
         commonTest.dependencies {
