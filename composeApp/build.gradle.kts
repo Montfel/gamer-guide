@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.firebase.crashlytics.gradle)
+    alias(libs.plugins.google.services)
 }
 
 kotlin {
@@ -31,6 +33,9 @@ kotlin {
             implementation(libs.activity)
             implementation(libs.koin.android)
             implementation(libs.ktor.client.android)
+            implementation(project.dependencies.platform(libs.firebase.bom))
+            implementation(libs.firebase.analytics) //fixme
+            implementation(libs.firebase.crashlytics)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -86,7 +91,7 @@ android {
         }
     }
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
         }
     }
@@ -99,4 +104,3 @@ android {
 dependencies {
     debugImplementation(libs.compose.ui.tooling)
 }
-
