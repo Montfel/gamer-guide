@@ -3,7 +3,6 @@ package com.montfel.gamerguide.feature.gamedetails.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,7 +17,7 @@ internal fun GameDetailsScreen(
     onEvent: (GameDetailsUiEvent) -> Unit
 ) {
     uiState.gameDetails?.let { gameDetails ->
-        Column(modifier = Modifier.safeDrawingPadding()) {
+        Column {
             AsyncImage(
                 model = gameDetails.backgroundImage,
                 contentDescription = null,
@@ -35,7 +34,6 @@ internal fun GameDetailsScreen(
                         modifier = Modifier.weight(1f)
                     )
                 }
-
 
                 if (uiState.isFavoritedGame) {
                     IconButton(
@@ -65,9 +63,9 @@ internal fun GameDetailsScreen(
 @Composable
 private fun GameDetailsScreenPreview() {
 //    GamerGuideTheme {
-//        GameDetailsScreen(
-//            uiState = GameDetailsUiState(),
-//            onEvent = {}
-//        )
+        GameDetailsScreen(
+            uiState = GameDetailsUiState(),
+            onEvent = {}
+        )
 //    }
 }
