@@ -1,4 +1,4 @@
-package com.montfel.gamerguide
+package com.montfel.gamerguide.androidapp
 
 import android.app.Application
 import com.montfel.gamerguide.di.initKoin

@@ -1,11 +1,15 @@
 plugins {
-    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.serialization)
 
     alias(libs.plugins.gamerguide.kotlin.multiplatform)
 }
 
 kotlin {
+    android {
+        namespace = "com.montfel.gamerguide.core.network"
+        compileSdk = libs.versions.android.sdk.compile.get().toInt()
+    }
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
@@ -20,9 +24,4 @@ kotlin {
             implementation(libs.kotlin.test)
         }
     }
-}
-
-android {
-    namespace = "com.montfel.gamerguide.core.network"
-    compileSdk = libs.versions.android.sdk.compile.get().toInt()
 }

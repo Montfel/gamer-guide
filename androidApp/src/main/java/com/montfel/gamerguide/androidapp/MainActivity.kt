@@ -1,4 +1,4 @@
-package com.montfel.gamerguide
+package com.montfel.gamerguide.androidapp
 
 import android.animation.ObjectAnimator
 import android.os.Bundle

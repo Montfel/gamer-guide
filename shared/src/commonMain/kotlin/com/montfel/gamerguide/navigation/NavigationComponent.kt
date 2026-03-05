@@ -25,8 +25,8 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
 import com.montfel.gamerguide.feature.gamedetails.ui.GameDetailsRoute
 import com.montfel.gamerguide.feature.home.ui.HomeRoute
-import gamerguide.composeapp.generated.resources.Res
-import gamerguide.composeapp.generated.resources.compose_multiplatform
+import gamerguide.shared.generated.resources.Res
+import gamerguide.shared.generated.resources.compose_multiplatform
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import org.jetbrains.compose.resources.painterResource

@@ -1,5 +1,4 @@
 plugins {
-    alias(libs.plugins.android.library)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose.multiplatform)
 
@@ -7,6 +6,11 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.montfel.gamerguide.feature.home.ui"
+        compileSdk = libs.versions.android.sdk.compile.get().toInt()
+    }
+
     sourceSets {
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -30,9 +34,4 @@ kotlin {
             implementation(libs.kotlin.test)
         }
     }
-}
-
-android {
-    namespace = "com.montfel.gamerguide.feature.home.ui"
-    compileSdk = libs.versions.android.sdk.compile.get().toInt()
 }

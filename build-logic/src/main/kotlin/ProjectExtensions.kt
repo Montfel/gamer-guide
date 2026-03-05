@@ -8,4 +8,5 @@ val Project.libs
 
 internal fun Project.applyKotlinMultiplatformPlugins() {
     apply(plugin = libs.plugins.kotlin.multiplatform.get().pluginId)
+    apply(plugin = libs.plugins.android.kotlin.multiplatform.library.get().pluginId)
 }
