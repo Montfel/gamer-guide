@@ -1,9 +1,10 @@
 package com.montfel.gamerguide.feature.gamedetails.ui
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.montfel.gamerguide.core.designsystem.ErrorScreen
+import com.montfel.gamerguide.core.designsystem.LoadingScreen
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -16,14 +17,11 @@ fun GameDetailsRoute(
 
     when (uiState.stateOfUi) {
         is StateOfUi.Error -> {
-            Text("Error")
-//            ErrorScreen(
-//                onClick = { viewModel.onEvent(GameDetailsUiEvent.GetGameDetails(id)) }
-//            )
+            ErrorScreen(onClick = viewModel::getGameDetails)
         }
 
         is StateOfUi.Loading -> {
-//            LoadingScreen()
+            LoadingScreen()
         }
 
         is StateOfUi.Success -> {

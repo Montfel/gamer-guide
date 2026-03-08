@@ -31,6 +31,8 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.network)
 
+            implementation(projects.core.designsystem)
+
             implementation(projects.feature.gamedetails.domain)
         }
         commonTest.dependencies {

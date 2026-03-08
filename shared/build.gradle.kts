@@ -17,8 +17,6 @@ kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_21)
         }
-
-        androidResources.enable = true
     }
 
     listOf(
@@ -32,9 +30,6 @@ kotlin {
     }
 
     sourceSets {
-        androidMain.dependencies {
-
-        }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
@@ -56,6 +51,7 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.bundles.coil)
 
+            implementation(projects.core.designsystem)
             implementation(projects.core.network)
 
             implementation(projects.feature.home.data)
@@ -70,4 +66,8 @@ kotlin {
             implementation(libs.kotlin.test)
         }
     }
+}
+
+compose.resources {
+    generateResClass = never
 }

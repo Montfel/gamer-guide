@@ -1,14 +1,16 @@
 plugins {
-    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.gamerguide.kotlin.multiplatform)
 }
 
 kotlin {
     android {
-        namespace = "com.montfel.gamerguide.feature.home.ui"
+        namespace = "com.montfel.gamerguide.core.designsystem"
         compileSdk = libs.versions.android.sdk.compile.get().toInt()
+
+        androidResources.enable = true
     }
 
     sourceSets {
@@ -19,21 +21,16 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.lifecycle.viewmodelCompose)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(project.dependencies.platform(libs.koin.bom))
-            implementation(libs.koin.compose)
-            implementation(libs.koin.core)
             implementation(libs.bundles.coil)
-            implementation(libs.paging.common)
-            implementation(libs.paging.compose)
-
-            implementation(projects.core.designsystem)
-
-            implementation(projects.feature.home.domain)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
     }
+}
+
+compose.resources {
+    packageOfResClass = "com.montfel.gamerguide.core.designsystem.resources"
+    generateResClass = always
+    publicResClass = true
 }

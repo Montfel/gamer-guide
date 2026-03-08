@@ -14,10 +14,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
 import coil3.compose.AsyncImage
+import com.montfel.gamerguide.core.designsystem.TextFieldCustom
 import com.montfel.gamerguide.feature.home.domain.model.Game
+import kotlinx.coroutines.flow.flowOf
 
 @Composable
 internal fun HomeScreen(
@@ -28,17 +33,13 @@ internal fun HomeScreen(
     Scaffold(
         modifier = Modifier.safeDrawingPadding()
     ) { paddingValues ->
-        LazyColumn(
-            modifier = Modifier
-                .padding(paddingValues)
-//                .padding(horizontal = size_16),
-        ) {
+        LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {
-//                TextFieldCustom(
-//                    query = searchQuery,
-//                    onClear = { onEvent(HomeUiEvent.SearchGames("")) },
-//                    onValueChange = { onEvent(HomeUiEvent.SearchGames(it)) }
-//                )
+                TextFieldCustom(
+                    query = searchQuery,
+                    onClear = { onEvent(HomeUiEvent.SearchGames("")) },
+                    onValueChange = { onEvent(HomeUiEvent.SearchGames(it)) }
+                )
             }
 
             items(count = gamesLazyPagingItems.itemCount) { index ->
@@ -101,24 +102,22 @@ internal fun HomeScreen(
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//private fun HomeScreenPreview() {
-//    GamerGuideTheme {
-//        HomeScreen(
-//            searchQuery = "",
-//            gamesLazyPagingItems = flowOf(
-//                PagingData.from(
-//                    listOf(
-//                        Game(
-//                            id = 9286,
-//                            name = "Boyd Branch",
-//                            backgroundImage = ""
-//                        )
-//                    )
-//                )
-//            ).collectAsLazyPagingItems(),
-//            onEvent = {}
-//        )
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+private fun HomeScreenPreview() {
+    HomeScreen(
+        searchQuery = "",
+        gamesLazyPagingItems = flowOf(
+            PagingData.from(
+                listOf(
+                    Game(
+                        id = 9286,
+                        name = "Boyd Branch",
+                        backgroundImage = ""
+                    )
+                )
+            )
+        ).collectAsLazyPagingItems(),
+        onEvent = {}
+    )
+}

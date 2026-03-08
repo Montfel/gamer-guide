@@ -32,7 +32,7 @@ internal class GameDetailsViewModel(
         }
     }
 
-    private fun getGameDetails() {
+    fun getGameDetails() {
         viewModelScope.launch {
             _uiState.update { it.copy(stateOfUi = StateOfUi.Loading) }
 
@@ -46,7 +46,6 @@ internal class GameDetailsViewModel(
                     }
                 }
                 .onFailure {
-                    println("===> $it")
                     _uiState.update {
                         it.copy(stateOfUi = StateOfUi.Error)
                     }

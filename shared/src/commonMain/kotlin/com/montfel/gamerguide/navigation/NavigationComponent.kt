@@ -23,13 +23,14 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.savedstate.serialization.SavedStateConfiguration
+import com.montfel.gamerguide.core.designsystem.resources.Res
+import com.montfel.gamerguide.core.designsystem.resources.ic_home
 import com.montfel.gamerguide.feature.gamedetails.ui.GameDetailsRoute
 import com.montfel.gamerguide.feature.home.ui.HomeRoute
-import gamerguide.shared.generated.resources.Res
-import gamerguide.shared.generated.resources.compose_multiplatform
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import org.jetbrains.compose.resources.painterResource
+
 
 private val configuration = SavedStateConfiguration {
     serializersModule = SerializersModule {
@@ -46,11 +47,11 @@ fun NavigationComponent() {
     val backStack = rememberNavBackStack(configuration = configuration, Screen.Home)
     val navigationBarItems = listOf(
         NavigationItem(
-            icon = painterResource(Res.drawable.compose_multiplatform),
+            icon = painterResource(Res.drawable.ic_home),
             screen = Screen.Home
         ),
         NavigationItem(
-            icon = painterResource(Res.drawable.compose_multiplatform),
+            icon = painterResource(Res.drawable.ic_home),
             screen = Screen.Lists
         )
     )
