@@ -21,8 +21,11 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil3.compose.AsyncImage
 import com.montfel.gamerguide.core.designsystem.TextFieldCustom
+import com.montfel.gamerguide.core.designsystem.resources.Res
+import com.montfel.gamerguide.core.designsystem.resources.ic_joystick
 import com.montfel.gamerguide.feature.home.domain.model.Game
 import kotlinx.coroutines.flow.flowOf
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 internal fun HomeScreen(
@@ -52,7 +55,8 @@ internal fun HomeScreen(
                     ) {
                         AsyncImage(
                             model = game.backgroundImage,
-//                            error = painterResource(R.drawable.baseline_videogame_asset_24),
+                            error = painterResource(Res.drawable.ic_joystick),
+                            placeholder = painterResource(Res.drawable.ic_joystick),
                             contentDescription = null,
                             contentScale = ContentScale.FillWidth,
                             modifier = Modifier.fillMaxWidth()
