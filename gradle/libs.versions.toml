@@ -7,36 +7,35 @@ android-namespace = "com.montfel.gamerguide"
 android-version-code = "1"
 android-version-name = "1.0.0"
 
-activity = "1.12.4"
+activity = "1.13.0"
 androidx-lifecycle = "2.9.6"
 androidGradlePlugin = "9.1.0"
 coil = "3.4.0"
 compose-multiplatform-lifecycle = "2.10.0-beta01"
-compose-multiplatform-adaptive = "1.3.0-alpha05"
+compose-multiplatform-adaptive = "1.3.0-alpha06"
 composeMultiplatform = "1.10.2"
-core = "1.17.0"
+core = "1.18.0"
 dependencyAnalysis = "3.6.1"
 detekt = "1.23.8"
 firebase = "34.10.0"
 firebaseCrashlyticsGradle = "3.0.6"
 google-services = "4.4.4"
-koin = "4.1.1"
-kotlin = "2.3.10"
+koin = "4.2.0"
+kotlin = "2.3.20"
 kotlinSerialization = "1.10.0"
 kotlinCoroutines = "1.10.2"
 kover = "0.9.7"
 ktor = "3.4.1"
-ksp = "2.3.4"
+ksp = "2.3.6"
 lifecycle = "2.10.0"
 material3 = "1.10.0-alpha05"
 multiplatform-nav3-ui = "1.0.0-alpha06"
-paging = "3.4.1"
+paging = "3.4.2"
 room = "2.8.4"
 splash = "1.2.0"
 runner = "1.7.0"
 coreVersion = "1.7.0"
 junit = "4.13.2"
-kotlinStdlib = "2.3.10"
 
 [libraries]
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
@@ -88,7 +87,6 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 splash = { module = "androidx.core:core-splashscreen", version.ref = "splash" }
 runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 test-core = { group = "androidx.test", name = "core", version.ref = "coreVersion" }
-kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
