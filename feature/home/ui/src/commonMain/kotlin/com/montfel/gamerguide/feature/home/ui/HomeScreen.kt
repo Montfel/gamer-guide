@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.LoadState
 import androidx.paging.PagingData
@@ -41,7 +42,8 @@ internal fun HomeScreen(
                 TextFieldCustom(
                     query = searchQuery,
                     onClear = { onEvent(HomeUiEvent.SearchGames("")) },
-                    onValueChange = { onEvent(HomeUiEvent.SearchGames(it)) }
+                    onValueChange = { onEvent(HomeUiEvent.SearchGames(it)) },
+                    modifier = Modifier.testTag("textfield")
                 )
             }
 
