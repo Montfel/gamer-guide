@@ -1,30 +1,42 @@
 plugins {
-    alias(libs.plugins.gamerguide.compose.library)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.multiplatform)
+
+    alias(libs.plugins.gamerguide.kotlin.multiplatform)
 }
 
-android {
-    namespace = "${libs.versions.app.namespace.get()}.feature.gamedetails.ui"
-}
+kotlin {
+    android {
+        namespace = "com.montfel.gamerguide.feature.gamedetails.ui"
+        compileSdk = libs.versions.android.sdk.compile.get().toInt()
+    }
 
-dependencies {
-    implementation(projects.core.common)
-    implementation(projects.core.designsystem)
+    sourceSets {
+        androidMain.dependencies {
+            implementation(libs.ktor.client.android)
+        }
+        commonMain.dependencies {
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.compose)
+            implementation(libs.koin.core)
+            implementation(libs.bundles.ktor)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network)
 
-    implementation(projects.feature.gamedetails.domain.contract)
-    implementation(projects.feature.lists.domain.contract)
+            implementation(projects.core.designsystem)
 
-    implementation(libs.bundles.coil)
-
-    // Compose
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.material3)
-    implementation(libs.compose.ui.tooling)
-
-    // Lifecycle
-    implementation(libs.lifecycle.compose)
-
-    // Koin
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.compose)
-    implementation(libs.koin.viewmodel)
+            implementation(projects.feature.gamedetails.domain)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
 }

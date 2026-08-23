@@ -1,26 +1,27 @@
 plugins {
-    alias(libs.plugins.gamerguide.android.library)
+    alias(libs.plugins.kotlin.serialization)
+
+    alias(libs.plugins.gamerguide.kotlin.multiplatform)
 }
 
-android {
-    namespace = "${libs.versions.app.namespace.get()}.core.network"
-}
+kotlin {
+    android {
+        namespace = "com.montfel.gamerguide.core.network"
+        compileSdk = libs.versions.android.sdk.compile.get().toInt()
+    }
 
-dependencies {
-    implementation(projects.core.common)
+    sourceSets {
+        androidMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
+        }
+        commonMain.dependencies {
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.bundles.ktor)
+        }
 
-    // OkHttp
-    implementation(platform(libs.okhttp.bom))
-    implementation(libs.bundles.okhttp)
-
-    // Koin
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.core)
-
-    // Ktor
-    implementation(libs.ktor.client.android)
-    implementation(libs.ktor.client.content.negotiation)
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.serialization.json)
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
 }
