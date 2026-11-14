@@ -1,17 +1,36 @@
 plugins {
-    alias(libs.plugins.gamerguide.compose.library)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
+
+    alias(libs.plugins.gamerguide.kotlin.multiplatform)
 }
 
-android {
-    namespace = "${libs.versions.app.namespace.get()}.core.designsystem"
+kotlin {
+    android {
+        namespace = "com.montfel.gamerguide.core.designsystem"
+        compileSdk = libs.versions.android.sdk.compile.get().toInt()
+
+        androidResources.enable = true
+    }
+
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.bundles.coil)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
 }
 
-dependencies {
-    implementation(libs.splash)
-
-    // Compose
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.material3)
-    implementation(libs.compose.foundation)
-    implementation(libs.compose.ui.tooling)
+compose.resources {
+    packageOfResClass = "com.montfel.gamerguide.core.designsystem.resources"
+    generateResClass = always
+    publicResClass = true
 }
